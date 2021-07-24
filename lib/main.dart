@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/servicelocator.dart';
 import 'package:hacktable/themeconfig.dart';
 
@@ -42,6 +43,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    int _currentIndex = 0;
+    final List<Widget> _children = [];
+
+    /// https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
+
+    void onTabTapped(int index) {
+      setState(() {
+        _currentIndex = index;
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('title'),
@@ -60,11 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      bottomNavigationBar:
+          NavigationBar(onTap: onTabTapped, currentIndex: _currentIndex),
     );
   }
 }
