@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
+import 'package:hacktable/pages/map_feature/map_page.dart';
+import 'package:hacktable/pages/sos/sos_landing.dart';
+import 'package:hacktable/pages/discussions/discussions_landing.dart';
 import 'package:hacktable/playground/playground.dart';
 import 'package:hacktable/themeconfig.dart';
+import 'package:hacktable/utils/router.dart';
 
 class App extends StatefulWidget {
   App({Key key}) : super(key: key);
@@ -11,8 +15,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> with SingleTickerProviderStateMixin {
-  int _counter = 0;
-
   TabController _tabController;
 
   @override
@@ -36,6 +38,13 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         backgroundColor: Palette.AppBarBackground,
         title: Text('title'),
+        elevation: 5.0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.face_rounded),
+            onPressed: () => Navigator.pushNamed(context, PROFILE_PAGE),
+          ),
+        ],
       ),
       body: _buildBody(),
       bottomNavigationBar:
@@ -47,7 +56,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return TabBarView(
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
-      children: [Placeholder(), Placeholder(), Placeholder()],
+      children: [MapPage(), SOSLandingPage(), DiscussionsLanding()],
     );
   }
 }

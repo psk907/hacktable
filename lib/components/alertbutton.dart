@@ -18,10 +18,8 @@ class Animatedbutton extends StatefulWidget {
       @required this.shadowColor,
       @required this.secondaryshadowColor,
       this.onLongPress,
-      this.width = 180,
-
-      // this.offset = const Offset(0.0, 5.0),
-      this.height = 180});
+      this.width = 185,
+      this.height = 185});
   @override
   _AnimatedbuttonState createState() => _AnimatedbuttonState();
 }
@@ -69,11 +67,11 @@ class _AnimatedbuttonState extends State<Animatedbutton>
         borderRadius: BorderRadius.circular(500),
         boxShadow: [
           BoxShadow(
-            spreadRadius: 45,
+            spreadRadius: 35,
             color: secshadowcolor,
           ),
           BoxShadow(
-            spreadRadius: 20,
+            spreadRadius: 15,
             color: shadowcolor,
             // color: Colors.amber[100].withOpacity(0.2),
           ),
@@ -84,7 +82,7 @@ class _AnimatedbuttonState extends State<Animatedbutton>
           child: Text(
         widget.text,
         textAlign: TextAlign.center,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
       )),
     );
   }
