@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'HackTable',
       debugShowCheckedModeBanner: false,
       // initialRoute: '/',
-      home: App(),
-      // home: Playground(),
+      //home: App(),
+      home: Playground(),
       scrollBehavior: ScrollWithoutMaterialOverflowGlow(),
     );
   }
