@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       //home: App(),
       home: Playground(),
       theme: ThemeData(
-        textTheme: GoogleFonts.ralewayTextTheme(),
+        textTheme: GoogleFonts.muktaTextTheme(), //TODO: CHOSE FONT
       ),
       scrollBehavior: ScrollWithoutMaterialOverflowGlow(),
     );
