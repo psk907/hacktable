@@ -19,7 +19,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = new TabController(length: 3, vsync: this, initialIndex: 1);
     super.initState();
   }
 
@@ -32,12 +32,10 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    /// https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Palette.AppBarBackground,
-        title: Text('title'),
+        title: Text('Voice Up'),
         elevation: 5.0,
         actions: [
           IconButton(
