@@ -39,6 +39,13 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         backgroundColor: Palette.AppBarBackground,
         title: Text('title'),
+        elevation: 5.0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.face_rounded),
+            onPressed: ()=>{},
+          ),
+        ],
       ),
       body: _buildBody(),
       bottomNavigationBar:
