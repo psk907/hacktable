@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="impracticalcoders.hacktable">
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="hacktable"
         android:icon="@mipmap/ic_launcher">
