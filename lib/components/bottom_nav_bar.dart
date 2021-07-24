@@ -18,28 +18,19 @@ class NavigationBar extends StatelessWidget {
       onTap: onTap,
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
-
-        new BottomNavigationBarItem(
-            icon: const Icon(Icons.map_rounded),
-            title: new Text("Map")
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.map_rounded),
+          label: "Map",
         ),
-
-        new BottomNavigationBarItem(
-            icon: const Icon(Icons.home_rounded),
-            title: new Text("Home")
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.home_rounded),
+          label: "Home",
         ),
-
-        new BottomNavigationBarItem(
-            icon: const Icon(Icons.mic_rounded),
-            title: new Text("Discuss")
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.mic_rounded),
+          label: "Discuss",
         ),
       ],
     );
-  }
-
-  _buildBottomNavigationBarItem({
-    @required tooltip,
-  }) {
-    return BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: tooltip);
   }
 }
