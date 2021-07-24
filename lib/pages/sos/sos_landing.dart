@@ -15,9 +15,13 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   bool showFirstContainer = true;
   CountDownController controller = CountDownController();
   int duration = 10;
-  onLongPress() => {
+  int caseNo = 0; //default case
+  // caseNo = 1 for yellow alert
+  // caseNo = 2 for red alert
+  onLongPress(no) => {
         setState(() {
           showFirstContainer = !showFirstContainer;
+          caseNo = no;
         }),
       };
   @override
@@ -38,14 +42,14 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                     ),
                     Spacer(flex: 3),
                     Animatedbutton(
-                        onLongPress: onLongPress,
+                        onLongPress: () => onLongPress(1),
                         text: "TAP AND HOLD FOR \n YELLOW ALERT",
                         buttonColor: Palette.brightyellow,
                         shadowColor: Palette.paleyellow,
                         secondaryshadowColor: Color(0xfffff0c1)),
                     Spacer(flex: 6),
                     Animatedbutton(
-                        onLongPress: onLongPress,
+                        onLongPress: () => onLongPress(2),
                         text: "TAP AND HOLD FOR \n RED ALERT",
                         buttonColor: Colors.red[200],
                         shadowColor: Colors.red[100],
@@ -53,7 +57,8 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                     Spacer(flex: 5),
                   ],
                 )
-              : CountdownWidget(controller: controller, duration: duration)),
+              : CountdownWidget(
+                  controller: controller, duration: duration, caseNo: caseNo)),
     );
   }
 }

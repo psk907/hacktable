@@ -7,8 +7,9 @@ class CountdownWidget extends StatefulWidget {
   final int duration;
   final CountDownController controller;
   final String title = "";
+  final int caseNo;
 
-  CountdownWidget({this.controller, this.duration});
+  CountdownWidget({this.controller, this.duration, this.caseNo});
   @override
   _CountdownWidgetState createState() => _CountdownWidgetState();
 }
@@ -17,6 +18,17 @@ class _CountdownWidgetState extends State<CountdownWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    Color outColor, inColor, fontColor;
+    if (widget.caseNo == 1) {
+      outColor = Palette.brightyellow;
+      inColor = Palette.paleyellow;
+      fontColor = Colors.grey[700];
+    } else if (widget.caseNo == 2) {
+      outColor = Palette.darker;
+      inColor = Palette.lightredtry;
+      fontColor = Colors.white;
+    }
+
     return Stack(
       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -29,7 +41,7 @@ class _CountdownWidgetState extends State<CountdownWidget> {
         Align(
             alignment: Alignment(0, -0.65),
             child: Text(
-              "Double tap to stop counter",
+              "Double tap to stop countdown",
               style: TextStyle(fontSize: 27),
             )),
         Align(
@@ -44,16 +56,14 @@ class _CountdownWidgetState extends State<CountdownWidget> {
               height: MediaQuery.of(context).size.width / 1.5,
               ringColor: Colors.grey[300],
               ringGradient: null,
-              fillColor: Palette.darker,
+              fillColor: outColor,
               fillGradient: null,
-              backgroundColor: Palette.lightredtry,
+              backgroundColor: inColor,
               backgroundGradient: null,
               strokeWidth: 20.0,
               strokeCap: StrokeCap.round,
               textStyle: TextStyle(
-                  fontSize: 60,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 60, color: fontColor, fontWeight: FontWeight.bold),
               textFormat: CountdownTextFormat.S,
               isReverse: true,
               isReverseAnimation: true,
