@@ -1,4 +1,4 @@
-package impracticalcoders.hacktable
+package com.impracticalcoders.hacktable
 
 import io.flutter.embedding.android.FlutterActivity
 
