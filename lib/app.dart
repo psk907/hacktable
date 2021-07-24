@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/playground/playground.dart';
 import 'package:hacktable/themeconfig.dart';
+import 'package:sms_maintained/sms.dart';
 
 class App extends StatefulWidget {
   App({Key key}) : super(key: key);
@@ -47,7 +48,20 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return TabBarView(
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
-      children: [Placeholder(), Placeholder(), Placeholder()],
+      children: [
+        Center(
+          child: TextButton(
+            onPressed: () {
+              SmsSender sender = new SmsSender();
+              String address = '+918762540826';
+              sender.sendSms(new SmsMessage(address, 'Hello flutter!'));
+            },
+            child: Text("Send sms"),
+          ),
+        ),
+        Placeholder(),
+        Placeholder()
+      ],
     );
   }
 }
