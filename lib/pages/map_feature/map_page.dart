@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hacktable/configs/maps_format.dart';
 import 'package:hacktable/services/location_service.dart';
+import 'package:hacktable/themeconfig.dart';
 
 class MapPage extends StatefulWidget {
   MapPage({Key key}) : super(key: key);
@@ -17,7 +18,7 @@ class _MapPageState extends State<MapPage> {
   bool showLoading = true;
   LocationService locationService = LocationService();
   CameraPosition _myLocation;
-
+  Set<Circle> circles = <Circle>{};
   @override
   void initState() {
     super.initState();
@@ -29,6 +30,7 @@ class _MapPageState extends State<MapPage> {
     setState(() {
       showLoading = false;
     });
+    _generateCircles();
   }
 
   Future<void> _getMyLocation() async {
@@ -58,6 +60,30 @@ class _MapPageState extends State<MapPage> {
     //   ));
     // });
   }
+  _generateCircles() {
+    List<LatLng> coordinates = List.generate(
+      10,
+      (index) => LatLng(
+        12.97209179633721 - (index * index * 0.01),
+        77.5932988675113 - (index * index * 0.0150),
+      ),
+    );
+    circles = coordinates
+        .map(
+          (e) => Circle(
+            circleId: CircleId(
+              "ID:" + e.longitude.toString(),
+            ),
+            center: e,
+            radius: 750.0,
+            strokeWidth: 0,
+            fillColor: Colors.black.withOpacity(0.3),
+          ),
+        )
+        .toSet();
+
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +105,7 @@ class _MapPageState extends State<MapPage> {
                 controller.setMapStyle(mapConfiguration);
               },
               // markers: Set.from(allMarkers),
+              circles: circles,
             ),
           );
   }
