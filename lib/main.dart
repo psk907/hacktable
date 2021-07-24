@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialRoute: '/',
       home: App(),
-      // home: Playground(),
+      //home: Playground(),
       theme: ThemeData(
         textTheme: GoogleFonts.muktaTextTheme(), //TODO: CHOSE FONT
       ),

@@ -18,18 +18,21 @@ class NavigationBar extends StatelessWidget {
       onTap: onTap,
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
+
         new BottomNavigationBarItem(
-            icon: const Icon(Icons.mic_rounded),
-            title: new Text("Discuss")
+            icon: const Icon(Icons.map_rounded),
+            title: new Text("Map")
         ),
+
         new BottomNavigationBarItem(
             icon: const Icon(Icons.home_rounded),
             title: new Text("Home")
         ),
+
         new BottomNavigationBarItem(
-            icon: const Icon(Icons.face_rounded),
-            title: new Text("Profile")
-        )
+            icon: const Icon(Icons.mic_rounded),
+            title: new Text("Discuss")
+        ),
       ],
     );
   }
