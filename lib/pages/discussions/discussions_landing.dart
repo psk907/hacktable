@@ -15,27 +15,31 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
-
-    body : Container(
-      decoration: BoxDecoration(
-
-            color: Colors.white,
-      ),
-      child: Center(
-        child: Column( // add Column
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Welcome', style: TextStyle( // your text
-                fontSize: 50.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black)
-            ),
-            RaisedButton(onPressed: () {}, child: Text('Go now'),), // your button beneath text
-          ],
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Center(
+          child: Column(
+            // add Column
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                  'Let us know if something disturbing took place, we will use this information to make the place safer.',
+                  style: TextStyle(
+                      // your text
+                      fontSize: 50.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black)),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Go now'),
+              ), // your button beneath text
+            ],
+          ),
         ),
       ),
-    ),
     );
     return container;
   }
