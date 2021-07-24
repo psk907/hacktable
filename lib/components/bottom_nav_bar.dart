@@ -27,8 +27,8 @@ class NavigationBar extends StatelessWidget {
             title: new Text("Home")
         ),
         new BottomNavigationBarItem(
-            icon: const Icon(Icons.face_rounded),
-            title: new Text("Profile")
+            icon: const Icon(Icons.map_rounded),
+            title: new Text("Map")
         )
       ],
     );
