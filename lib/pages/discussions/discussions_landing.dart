@@ -31,10 +31,13 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                 fontWeight: FontWeight.bold,
                 color: Colors.black)
             ),
-            RaisedButton(onPressed: () {}, child: Text('Go now'),), // your button beneath text
-          ],
-        ),
+            RaisedButton(onPressed: () {},
+              color: Palette.AppBarBackground,
+              child: Text('Go now')
       ),
+      ],
+    ),
+    ),
     ),
     );
     return container;
