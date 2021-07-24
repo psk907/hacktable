@@ -1,4 +1,5 @@
 lib/playground
+# pubspec.lock
 
 # Miscellaneous
 *.class
