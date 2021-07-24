@@ -19,6 +19,10 @@ class NavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
         new BottomNavigationBarItem(
+            icon: const Icon(Icons.map_rounded),
+            title: new Text("Map")
+        )
+        new BottomNavigationBarItem(
             icon: const Icon(Icons.mic_rounded),
             title: new Text("Discuss")
         ),
@@ -26,10 +30,6 @@ class NavigationBar extends StatelessWidget {
             icon: const Icon(Icons.home_rounded),
             title: new Text("Home")
         ),
-        new BottomNavigationBarItem(
-            icon: const Icon(Icons.map_rounded),
-            title: new Text("Map")
-        )
       ],
     );
   }
