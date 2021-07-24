@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       title: 'HackTable',
       debugShowCheckedModeBanner: false,
       // initialRoute: '/',
-      // home: App(),
-      home: Playground(),
+      home: App(),
+      // home: Playground(),
       theme: ThemeData(
         textTheme: GoogleFonts.ralewayTextTheme(),
       ),
