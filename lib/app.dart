@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
+import 'package:hacktable/playground/playground.dart';
 
 class App extends StatefulWidget {
   App({Key key}) : super(key: key);
