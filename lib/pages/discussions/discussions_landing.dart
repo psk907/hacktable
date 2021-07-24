@@ -15,7 +15,6 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -30,7 +29,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                   'Let us know if something disturbing took place, we will use this information to make the place safer.',
                   style: TextStyle(
                       // your text
-                      fontSize: 15.0,
+                      fontSize: 20.0,
                       color: Colors.black)),
               RaisedButton(
                 onPressed: () {},
