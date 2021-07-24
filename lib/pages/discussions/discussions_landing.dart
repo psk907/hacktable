@@ -29,8 +29,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                   'Let us know if something disturbing took place, we will use this information to make the place safer.',
                   style: TextStyle(
                       // your text
-                      fontSize: 50.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 15.0,
                       color: Colors.black)),
               RaisedButton(
                 onPressed: () {},
