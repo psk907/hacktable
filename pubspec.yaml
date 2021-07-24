@@ -29,6 +29,8 @@ dependencies:
   get_it: ^7.2.0
   google_fonts: ^2.1.0
   shared_preferences: ^2.0.6
+  sms_maintained:
+    git: https://github.com/mHaisham/flutter_sms.git
   url_launcher: ^6.0.9
 
 # For information on the generic Dart part of this file, see the

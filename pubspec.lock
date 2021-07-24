@@ -261,6 +261,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sms_maintained:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: fd1c10ffed8df44cf4dfaef6cfa075bae33738d3
+      url: "https://github.com/mHaisham/flutter_sms.git"
+    source: git
+    version: "0.2.6"
   source_span:
     dependency: transitive
     description:

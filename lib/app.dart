@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/pages/profile.dart';
 import 'package:hacktable/pages/sos/sos_landing.dart';
-import 'package:hacktable/playground/playground.dart';
 import 'package:hacktable/themeconfig.dart';
 
 class App extends StatefulWidget {
