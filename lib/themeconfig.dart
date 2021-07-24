@@ -14,6 +14,7 @@ class Palette {
   static const AppBarBackground = Color.fromRGBO(255, 108, 108, 1.0);
   static const darker = const Color(0xFFff5353);
   static const brightyellow = const Color(0xFFffd85b); //TRY
+  static const lightredtry = const Color(0xffff9e9e);
   static const lighter = const Color(0xFFff8686);
   static const paleyellow = const Color(0xFFffeaa7);
   static const dribble = const Color(0xFFFF6C6C);
