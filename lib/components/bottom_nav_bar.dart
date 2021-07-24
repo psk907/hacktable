@@ -19,11 +19,11 @@ class NavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
         new BottomNavigationBarItem(
-            icon: const Icon(Icons.mic_outlined),
+            icon: const Icon(Icons.mic_rounded),
             title: new Text("Discuss")
         ),
         new BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.home_rounded),
             title: new Text("Home")
         ),
         new BottomNavigationBarItem(
@@ -37,6 +37,6 @@ class NavigationBar extends StatelessWidget {
   _buildBottomNavigationBarItem({
     @required tooltip,
   }) {
-    return BottomNavigationBarItem(icon: Icon(Icons.home), label: tooltip);
+    return BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: tooltip);
   }
 }
