@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hacktable/app.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/playground/playground.dart';
@@ -22,6 +23,9 @@ class MyApp extends StatelessWidget {
       // initialRoute: '/',
       //home: App(),
       home: Playground(),
+      theme: ThemeData(
+        textTheme: GoogleFonts.ralewayTextTheme(),
+      ),
       scrollBehavior: ScrollWithoutMaterialOverflowGlow(),
     );
   }
