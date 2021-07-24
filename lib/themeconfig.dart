@@ -9,3 +9,14 @@ class ScrollWithoutMaterialOverflowGlow extends ScrollBehavior {
     return child;
   }
 }
+class ThemeConfig {
+
+  static const AppBarBackground = Color.fromRGBO(255,108,108,1.0);
+  static const darker = const Color(0xff5353);
+  static const lighter = const Color(0xff8686);
+  static const paleyellow = const Color(0xffeaa7);
+  static const dribble = const Color(0xFF6C6C);
+  static const themegreen = const Color(0x87B199);
+  static const themeblue = const Color(0x6D9DF1);
+
+}

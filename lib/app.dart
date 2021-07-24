@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
+import 'package:hacktable/playground/playground.dart';
+import 'package:hacktable/themeconfig.dart';
 
 class App extends StatefulWidget {
   App({Key key}) : super(key: key);
@@ -32,6 +34,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ThemeConfig.AppBarBackground,
         title: Text('title'),
       ),
       body: _buildBody(),
