@@ -15,32 +15,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold (
 
-    body : Container(
-      decoration: BoxDecoration(
-
-            color: Colors.white,
-      ),
-      child: Center(
-        child: Column( // add Column
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Welcome', style: TextStyle( // your text
-                fontSize: 50.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black)
-            ),
-            RaisedButton(onPressed: () {},
-              color: Palette.AppBarBackground,
-              child: Text('Go now')
-      ),
-      ],
-    ),
-    ),
-    ),
-=======
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -66,7 +41,6 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
           ),
         ),
       ),
->>>>>>> 4712f677e152fa4e40a0db190577dfdb41cfd2e4
     );
     return container;
   }
