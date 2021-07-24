@@ -15,7 +15,8 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   bool showFirstContainer = true;
   CountDownController controller = CountDownController();
   int duration = 10;
-  int caseNo = 0; //default case
+  int caseNo = 0;
+  //default case
   // caseNo = 1 for yellow alert
   // caseNo = 2 for red alert
   onLongPress(no) => {
@@ -24,6 +25,13 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
           caseNo = no;
         }),
       };
+
+  void callback() {
+    setState(() {
+      showFirstContainer = !showFirstContainer;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +66,11 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                   ],
                 )
               : CountdownWidget(
-                  controller: controller, duration: duration, caseNo: caseNo)),
+                  controller: controller,
+                  duration: duration,
+                  caseNo: caseNo,
+                  callback: callback,
+                )),
     );
   }
 }
