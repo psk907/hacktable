@@ -31,9 +31,9 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
           Spacer(flex: 6),
           Animatedbutton(
               text: "TAP AND HOLD FOR \n RED ALERT",
-              buttonColor: Colors.red[200],
-              shadowColor: Colors.red[100],
-              secondaryshadowColor: Colors.red[50]),
+              buttonColor: Colors.red[300],
+              shadowColor: Colors.red[200],
+              secondaryshadowColor: Colors.red[100]),
           Spacer(flex: 5),
         ],
       ),
