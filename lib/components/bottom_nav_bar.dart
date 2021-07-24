@@ -21,7 +21,7 @@ class NavigationBar extends StatelessWidget {
         new BottomNavigationBarItem(
             icon: const Icon(Icons.map_rounded),
             title: new Text("Map")
-        )
+        ),
         new BottomNavigationBarItem(
             icon: const Icon(Icons.mic_rounded),
             title: new Text("Discuss")
