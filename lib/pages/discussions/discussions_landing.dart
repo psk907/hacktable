@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:hacktable/themeconfig.dart';
 
 class DiscussionsLanding extends StatefulWidget {
   const DiscussionsLanding({Key key}) : super(key: key);
@@ -8,29 +11,31 @@ class DiscussionsLanding extends StatefulWidget {
 }
 
 class _DiscussionsLandingState extends State<DiscussionsLanding> {
+  Text get container => null;
+
   @override
   Widget build(BuildContext context) {
-    var container = Container(
+    return Scaffold (
+
+    body : Container(
+      decoration: BoxDecoration(
+
+            color: Palette.paleyellow
+      ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // ignore: deprecated_member_use
-            RaisedButton(
-              child: Text(
-                "Click Here",
-                style: TextStyle(fontSize: 20),
-              ),
-              color: Colors.red[200],
-              textColor: Colors.white,
-              padding: EdgeInsets.all(8.0),
-              splashColor: Colors.grey,
-              onPressed: () {},
-            )
+        child: Column( // add Column
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Welcome', style: TextStyle( // your text
+                fontSize: 50.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black)
+            ),
+            RaisedButton(onPressed: () {}, child: Text('Go now'),), // your button beneath text
           ],
         ),
       ),
-      // ignore: dead_code
+    ),
     );
     return container;
   }
