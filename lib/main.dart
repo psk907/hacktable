@@ -32,48 +32,44 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   int _counter = 0;
 
-  void _incrementCounter() {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = new TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
+  void _selectTab(int _index) {
     setState(() {
-      _counter++;
+      _tabController.index = _index;
     });
+    print(_tabController.index);
   }
 
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
-    final List<Widget> _children = [];
-
     /// https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation
-
-    void onTabTapped(int index) {
-      setState(() {
-        _currentIndex = index;
-      });
-    }
 
     return Scaffold(
       appBar: AppBar(
         title: Text('title'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
+      body: _buildBody(),
       bottomNavigationBar:
-          NavigationBar(onTap: onTabTapped, currentIndex: _currentIndex),
+          NavigationBar(onTap: _selectTab, currentIndex: _tabController.index),
+    );
+  }
+
+  Widget _buildBody() {
+    return TabBarView(
+      controller: _tabController,
+      physics: NeverScrollableScrollPhysics(),
+      children: [Placeholder(), Placeholder(), Placeholder()],
     );
   }
 }

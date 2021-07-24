@@ -30,10 +30,6 @@ dependencies:
   shared_preferences: ^2.0.6
   url_launcher: ^6.0.9
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
