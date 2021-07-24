@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hacktable/app.dart';
-import 'package:hacktable/components/bottom_nav_bar.dart';
-import 'package:hacktable/playground/playground.dart';
 import 'package:hacktable/root.dart';
 import 'package:hacktable/servicelocator.dart';
 import 'package:hacktable/services/permission_service.dart';

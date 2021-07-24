@@ -33,11 +33,12 @@ class _MapPageState extends State<MapPage> {
 
   Future<void> _getMyLocation() async {
     List<double> location = await locationService.getLocation();
-    print(location);
-    setState(() {
-      _myLocation =
-          CameraPosition(target: LatLng(location[0], location[1]), zoom: 13);
-    });
+    // print(location);
+    if (this.mounted)
+      setState(() {
+        _myLocation =
+            CameraPosition(target: LatLng(location[0], location[1]), zoom: 13);
+      });
   }
 
   Future<void> _getMarkers() async {

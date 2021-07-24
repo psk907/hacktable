@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/app.dart';
-import 'package:hacktable/pages/profile.dart';
+import 'package:hacktable/pages/profile/profile.dart';
 import 'package:hacktable/pages/splash_screen.dart';
 
 const PROFILE_PAGE = '/profile';

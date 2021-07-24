@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/pages/map_feature/map_page.dart';
-import 'package:hacktable/pages/profile.dart';
 import 'package:hacktable/pages/sos/sos_landing.dart';
 import 'package:hacktable/pages/discussions/discussions_landing.dart';
 import 'package:hacktable/playground/playground.dart';
@@ -16,8 +15,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> with SingleTickerProviderStateMixin {
-  int _counter = 0;
-
   TabController _tabController;
 
   @override
