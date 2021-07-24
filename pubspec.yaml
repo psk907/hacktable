@@ -23,14 +23,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sms_maintained:
+    git: https://github.com/mHaisham/flutter_sms.git
   cupertino_icons: ^1.0.2
   dio: ^4.0.0
   flutter_svg: ^0.22.0
   get_it: ^7.2.0
   google_fonts: ^2.1.0
+  permission_handler: ^8.1.4+1
+  provider: ^5.0.0
   shared_preferences: ^2.0.6
-  sms_maintained:
-    git: https://github.com/mHaisham/flutter_sms.git
   url_launcher: ^6.0.9
 
 # For information on the generic Dart part of this file, see the
@@ -44,7 +46,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-  #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
