@@ -34,7 +34,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ThemeConfig.AppBarBackground,
+        backgroundColor: Palette.AppBarBackground,
         title: Text('title'),
       ),
       body: _buildBody(),
