@@ -25,16 +25,17 @@ dependencies:
     sdk: flutter
   sms_maintained:
     git: https://github.com/mHaisham/flutter_sms.git
+  circular_countdown_timer: ^0.2.0
   cupertino_icons: ^1.0.2
   dio: ^4.0.0
   flutter_svg: ^0.22.0
   get_it: ^7.2.0
   google_fonts: ^2.1.0
+  google_maps_flutter: ^2.0.6
   permission_handler: ^8.1.4+1
   provider: ^5.0.0
   shared_preferences: ^2.0.6
   url_launcher: ^6.0.9
-  circular_countdown_timer: ^0.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
