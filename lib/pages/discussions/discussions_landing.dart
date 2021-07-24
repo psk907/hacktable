@@ -20,7 +20,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
     body : Container(
       decoration: BoxDecoration(
 
-            color: Palette.paleyellow
+            color: Colors.white,
       ),
       child: Center(
         child: Column( // add Column
