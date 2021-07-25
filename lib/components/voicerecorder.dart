@@ -161,11 +161,12 @@ class _VoiceRecorderState extends State<VoiceRecorder>
     _controller.forward();
     bool result = await _audioRecorder.hasPermission();
     if (result) {
-      Directory tempDir = await getTemporaryDirectory();
-      String tempPath = tempDir.path;
-      filePath = tempPath;
+      Directory appDocDir = await getApplicationDocumentsDirectory();
+      String appDocPath = appDocDir.path;
+      filePath = appDocPath;
+      print(appDocPath);
       await _audioRecorder.start(
-        path: '${tempPath}/myFile.mpeg', // required
+        path: '${appDocPath}/myFile.mpeg', // required
         encoder: AudioEncoder.AAC, // by default
         bitRate: 128000, // by default
       );
