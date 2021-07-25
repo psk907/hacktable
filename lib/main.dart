@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     var platform = Theme.of(context).platform;
     print(platform.toString());
     return MaterialApp(
-      title: 'HackTable',
+      title: 'Voice Up | Dashboard',
       debugShowCheckedModeBanner: false,
       // initialRoute: '/',
       home: Root().getHome(platform),

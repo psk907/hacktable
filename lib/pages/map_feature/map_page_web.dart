@@ -60,14 +60,7 @@ class _MapPageWebState extends State<MapPageWeb> {
   // CameraPosition _myLocation;
   LatLng currentLocation;
 
-  List<LatLng> coordinates = List.generate(
-    10,
-    (index) => LatLng(
-      12.97209179633721 - (index * index * 0.01),
-      77.5932988675113 - (index * index * 0.0150),
-    ),
-  );
-
+  List<LatLng> coordinates;
   @override
   void initState() {
     super.initState();
@@ -77,6 +70,10 @@ class _MapPageWebState extends State<MapPageWeb> {
   _init() async {
     await Future.wait([_getMyLocation(), _getMarkers()]);
     // _generateCircles();
+    coordinates = widget.incidents
+        .map((e) => LatLng(e.location[0], e.location[1]))
+        .toList();
+
     setState(() {
       showLoading = false;
     });

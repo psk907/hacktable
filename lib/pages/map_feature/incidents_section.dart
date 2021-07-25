@@ -24,13 +24,33 @@ class IncidentsSectionWeb extends StatelessWidget {
       color: Palette.lighter,
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "Dashboard",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 40,
+                      color: Colors.white),
+                ),
+                alignment: Alignment.centerLeft,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 12.0),
+                child: Image.asset('assets/logo.png', height: 50),
+              ),
+            ],
+          ),
           Container(
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              "Incidents",
+              "Incidents reported",
               style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 40,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 32,
                   color: Colors.white),
             ),
             alignment: Alignment.centerLeft,
