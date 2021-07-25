@@ -37,9 +37,14 @@ class SosService {
     String googleMapsUrl =
         "https://www.google.com/maps/search/?api=1&query=${latLng.latitude}%2C${latLng.longitude}";
     print(googleMapsUrl);
-    String message = composeMessage("YELLOW", googleMapsUrl);
+    // String message = ;
     contacts.forEach((element) async {
-      await sendSms(element.contactNo, message);
+      await sendSms(element.contactNo,
+          "ALERT SOS MESSAGE !\n\nYou have been sent a YELLOW ALERT SOS by Priyanka Sharma.\nThey might be in trouble, please contact them or alert the authorities.");
+      await sendSms(
+          element.contactNo, "Their current location is at $googleMapsUrl.");
+      await sendSms(element.contactNo,
+          "These prompts were auto generated from the 'Voice Up' app.");
     });
     return true;
   }
@@ -54,9 +59,13 @@ class SosService {
         .map((e) => Contact.fromMap(e))
         .where((element) => element.type == ContactType.red)
         .toList();
-    String message = composeMessage("RED", googleMapsUrl);
     contacts.forEach((element) async {
-      await sendSms(element.contactNo, message);
+      await sendSms(element.contactNo,
+          "ALERT SOS MESSAGE !\n\nYou have been sent a RED ALERT SOS by Priyanka Sharma.\nThey might be in trouble, please contact them or alert the authorities.");
+      await sendSms(
+          element.contactNo, "Their current location is at $googleMapsUrl.");
+      await sendSms(element.contactNo,
+          "These prompts were auto generated from the 'Voice Up' app.");
     });
     return true;
   }
