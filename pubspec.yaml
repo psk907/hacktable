@@ -33,13 +33,13 @@ dependencies:
   google_fonts: ^2.1.0
   google_maps: ^5.1.0
   google_maps_flutter: ^2.0.6
-  # google_maps_flutter_web: ^0.3.0+3
+  intl: ^0.17.0
   location: ^4.3.0
+  lottie: ^1.1.0
   permission_handler: ^8.1.4+1
   provider: ^5.0.0
   shared_preferences: ^2.0.6
   url_launcher: ^6.0.9
-  lottie: ^1.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

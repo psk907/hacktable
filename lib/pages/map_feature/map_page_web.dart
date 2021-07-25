@@ -4,6 +4,8 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:google_maps/google_maps.dart';
 import 'package:hacktable/configs/maps_format.dart';
+import 'package:hacktable/models/incident.dart';
+import 'package:hacktable/models/incident_analytics.dart';
 import 'package:hacktable/services/location_service.dart';
 import 'package:hacktable/themeconfig.dart';
 
@@ -11,7 +13,10 @@ import 'package:hacktable/themeconfig.dart';
 import 'dart:ui' as ui;
 
 class MapPageWeb extends StatefulWidget {
-  MapPageWeb({Key key}) : super(key: key);
+  final IncidentAnalytics incident;
+  final List<IncidentAnalytics> incidents;
+
+  MapPageWeb({Key key, this.incident, this.incidents}) : super(key: key);
 
   @override
   _MapPageWebState createState() => _MapPageWebState();
@@ -52,7 +57,6 @@ Widget getMap(List<LatLng> coordinates, LatLng currentLocation) {
 class _MapPageWebState extends State<MapPageWeb> {
   // Completer<GoogleMapController> _controller = Completer();
   bool showLoading = true;
-  LocationService locationService = LocationService();
   // CameraPosition _myLocation;
   LatLng currentLocation;
 
@@ -79,12 +83,13 @@ class _MapPageWebState extends State<MapPageWeb> {
   }
 
   Future<void> _getMyLocation() async {
-    List<double> location = await locationService.getLocation();
+    List<double> location = await LocationService.getLocation();
     // print(location);
-    if (this.mounted)
+    if (this.mounted) {
       setState(() {
         currentLocation = LatLng(location[0], location[1]);
       });
+    }
   }
 
   Future<void> _getMarkers() async {
@@ -107,10 +112,13 @@ class _MapPageWebState extends State<MapPageWeb> {
 
   @override
   Widget build(BuildContext context) {
+    LatLng markerLocation = widget.incident != null
+        ? LatLng(widget.incident.location[0], widget.incident.location[1])
+        : currentLocation;
     return showLoading
         ? Center(child: CircularProgressIndicator())
         : Scaffold(
             // 1
-            body: getMap(coordinates, currentLocation));
+            body: getMap(coordinates, markerLocation));
   }
 }

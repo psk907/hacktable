@@ -1,4 +1,4 @@
-[
+const List incidentsExample = [
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -13,13 +13,13 @@
     "incidentUuid": "",
     "userName": "Anonymous",
     "location": [13.011053, 77.554939],
-    "incidentSummary": "posing as a tour guide and offering to show me the sights of the city",
+    "incidentSummary":
+        "posing as a tour guide and offering to show me the sights of the city",
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
     "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -31,7 +31,6 @@
     "topics": ["life-threatening", "unsafe", "risky"],
     "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -43,19 +42,18 @@
     "topics": ["stalker", "unsafe", "creepy"],
     "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
     "userName": "Nisha",
-    "location": [13.01105, 77.5549665],
-    "incidentSummary": "posing as a tour guide and offering to show me the sights of the city",
+    "location": [13.011050, 77.5549665],
+    "incidentSummary":
+        "posing as a tour guide and offering to show me the sights of the city",
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
     "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -67,7 +65,6 @@
     "topics": ["life-threatening", "unsafe", "risky"],
     "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -79,4 +76,4 @@
     "topics": ["stalker", "unsafe", "creepy"],
     "sentimentIntensity": -0.8
   }
-]
+];

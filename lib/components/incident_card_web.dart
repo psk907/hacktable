@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hacktable/models/incident_analytics.dart';
+import 'package:intl/intl.dart';
 
 class IncidentCardWeb extends StatelessWidget {
+  final IncidentAnalytics incident;
   final Function onTap;
-  const IncidentCardWeb({Key key, this.onTap}) : super(key: key);
+  const IncidentCardWeb({Key key, this.onTap, this.incident}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,9 @@ class IncidentCardWeb extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3.0),
       child: Card(
         child: ListTile(
-          title: Text("Person A"),
+          title: Text(incident.userName ?? "Anonymous"),
+          subtitle: Text(
+              DateFormat('kk:mm - dd-MM-yyyy').format(incident.reportedOn)),
           trailing: IconButton(
               onPressed: onTap, icon: Icon(Icons.arrow_forward_ios_rounded)),
           onTap: onTap,
