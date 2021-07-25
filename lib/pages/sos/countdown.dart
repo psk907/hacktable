@@ -1,7 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/falsealert.dart';
+import 'package:hacktable/pages/sos/yellowAlertsent.dart';
 import 'package:hacktable/themeconfig.dart';
+import 'package:hacktable/utils/router.dart';
 
 class CountdownWidget extends StatefulWidget {
   // const CountdownWidget({Key key}) : super(key: key);
@@ -10,8 +12,14 @@ class CountdownWidget extends StatefulWidget {
   final String title = "";
   final int caseNo;
   final Function callback;
+  final Function afterAlertSent;
 
-  CountdownWidget({this.controller, this.duration, this.caseNo, this.callback});
+  CountdownWidget(
+      {this.controller,
+      this.duration,
+      this.caseNo,
+      this.callback,
+      this.afterAlertSent});
   @override
   _CountdownWidgetState createState() => _CountdownWidgetState();
 }
@@ -86,6 +94,7 @@ class _CountdownWidgetState extends State<CountdownWidget> {
               // This Callback will execute when the Countdown Ends.
               onComplete: () {
                 // Here, do whatever you want
+                widget.afterAlertSent();
                 print('Countdown Ended');
               },
             ),
@@ -108,6 +117,8 @@ class _CountdownWidgetState extends State<CountdownWidget> {
               icon: Icon(Icons.next_plan),
               onPressed: () {
                 print('Pressed');
+                widget.controller.pause();
+                widget.afterAlertSent();
               },
             ))
       ],

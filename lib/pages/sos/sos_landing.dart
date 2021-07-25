@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/alertbutton.dart';
-import 'package:hacktable/components/countdown.dart';
+import 'package:hacktable/pages/sos/countdown.dart';
+import 'package:hacktable/pages/sos/yellowAlertsent.dart';
 import 'package:hacktable/themeconfig.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:hacktable/utils/router.dart';
 
 class SOSLandingPage extends StatefulWidget {
   SOSLandingPage({Key key}) : super(key: key);
@@ -19,6 +21,7 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   //default case
   // caseNo = 1 for yellow alert
   // caseNo = 2 for red alert
+
   onLongPress(no) => {
         setState(() {
           showFirstContainer = !showFirstContainer;
@@ -29,6 +32,16 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   void callback() {
     setState(() {
       showFirstContainer = !showFirstContainer;
+    });
+  }
+
+  afterAlertSent() {
+    // if (caseNo == 1)
+    setState(() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => YellowAlertSent()),
+      );
     });
   }
 
@@ -63,6 +76,29 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                         shadowColor: Colors.red[100],
                         secondaryshadowColor: Colors.red[50]),
                     Spacer(flex: 5),
+                    ElevatedButton.icon(
+                      label: Text(
+                        'Force send',
+                        style: TextStyle(fontSize: 22),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.teal[400],
+                        onPrimary: Colors.white,
+                        shape: const BeveledRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                      ),
+                      icon: Icon(Icons.next_plan),
+                      onPressed: () {
+                        print('Pressed');
+                        // CustomRoute(page: YellowAlertSent());
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => YellowAlertSent()),
+                        );
+                      },
+                    )
                   ],
                 )
               : CountdownWidget(
@@ -70,6 +106,7 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                   duration: duration,
                   caseNo: caseNo,
                   callback: callback,
+                  afterAlertSent: afterAlertSent,
                 )),
     );
   }
