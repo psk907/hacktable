@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktable/pages/sos/redAlertsent.dart';
 import 'package:hacktable/themeconfig.dart';
 import 'package:lottie/lottie.dart';
 
@@ -51,7 +52,6 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
               style: TextStyle(fontSize: 24, color: Colors.grey[700]),
             ),
           ),
-          // Spacer(),
           Divider(
             thickness: 3,
             endIndent: size.width * 0.18,
@@ -64,9 +64,6 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
               style: TextStyle(fontSize: 28),
             ),
           ),
-          // Spacer(flex: 2),
-
-          // Spacer(flex: 2),
           Container(
             width: size.width * 0.8,
             height: size.height * 0.1,
@@ -81,6 +78,12 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
                         TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   // TODO: RED ALERT
+                  Navigator.pushReplacement<void, void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => RedAlertSent(),
+                    ),
+                  );
                 },
                 child: Text("RED ALERT")),
           ),
