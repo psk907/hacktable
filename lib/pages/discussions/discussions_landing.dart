@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hacktable/themeconfig.dart';
+import 'package:lottie/lottie.dart';
 
 class DiscussionsLanding extends StatefulWidget {
   const DiscussionsLanding({Key key}) : super(key: key);
@@ -13,6 +17,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -21,18 +26,38 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
         child: Center(
           child: Column(
             // add Column
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                  'Let us know if something disturbing took place, we will use this information to make the place safer.',
-                  style: TextStyle(
-                      // your text
-                      fontSize: 20.0,
-                      color: Colors.black)),
-              RaisedButton(
-                onPressed: () {},
-                child: Text('Go now'),
-              ), // your button beneath text
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Lottie.asset('assets/discussions.json',
+                      width: size.width * 0.2),
+
+                  Text(
+                      'Let us know if something disturbing took place, we will use this information to make the place safer.',
+                      style: TextStyle(
+                          // your text
+                          fontSize: 20.0,
+                          color: Colors.black)),
+
+                  RaisedButton(
+                    onPressed: () => {},
+                    color: Palette.AppBarBackground,
+                    padding:
+                        EdgeInsets.only(right: 10.0, bottom: 1.0, top: 1.0),
+                    child: Text(
+                      'Go Now',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Palette.brightyellow,
+                          fontSize: 15.0), //TextStyle
+                    ), //Text
+                  ),
+
+                  //FlatButton
+                ],
+              ),
             ],
           ),
         ),
