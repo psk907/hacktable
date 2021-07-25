@@ -1,7 +1,7 @@
 import 'package:location/location.dart';
 
 class LocationService {
-  Future<List<double>> getLocation() async {
+  static Future<List<double>> getLocation() async {
     Location location = new Location();
 
     bool _serviceEnabled;

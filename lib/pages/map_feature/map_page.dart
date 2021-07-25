@@ -16,7 +16,6 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   Completer<GoogleMapController> _controller = Completer();
   bool showLoading = true;
-  LocationService locationService = LocationService();
   CameraPosition _myLocation;
   Set<Circle> circles = <Circle>{};
   @override
@@ -34,7 +33,7 @@ class _MapPageState extends State<MapPage> {
   }
 
   Future<void> _getMyLocation() async {
-    List<double> location = await locationService.getLocation();
+    List<double> location = await LocationService.getLocation();
     // print(location);
     if (this.mounted)
       setState(() {

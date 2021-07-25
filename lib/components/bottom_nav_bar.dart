@@ -23,8 +23,8 @@ class NavigationBar extends StatelessWidget {
           label: "Map",
         ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.home_rounded),
-          label: "Home",
+          icon: const Icon(Icons.nearby_error_rounded),
+          label: "SOS",
         ),
         BottomNavigationBarItem(
           icon: const Icon(Icons.mic_rounded),
