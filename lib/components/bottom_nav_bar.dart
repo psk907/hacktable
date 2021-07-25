@@ -25,8 +25,8 @@ class NavigationBar extends StatelessWidget {
         ),
         if (!isWeb) ...[
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home_rounded),
-            label: "Home",
+            icon: const Icon(Icons.nearby_error_rounded),
+            label: "SOS",
           ),
         ],
         BottomNavigationBarItem(

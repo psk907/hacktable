@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/alertbutton.dart';
-import 'package:hacktable/components/countdown.dart';
+import 'package:hacktable/pages/sos/countdown.dart';
+import 'package:hacktable/pages/sos/redAlertsent.dart';
+import 'package:hacktable/pages/sos/yellowAlertsent.dart';
 import 'package:hacktable/themeconfig.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:hacktable/utils/router.dart';
 
 class SOSLandingPage extends StatefulWidget {
   SOSLandingPage({Key key}) : super(key: key);
@@ -19,6 +22,7 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   //default case
   // caseNo = 1 for yellow alert
   // caseNo = 2 for red alert
+
   onLongPress(no) => {
         setState(() {
           showFirstContainer = !showFirstContainer;
@@ -32,7 +36,26 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
     });
   }
 
+  afterAlertSent() {
+    setState(() {
+      if (caseNo == 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => YellowAlertSent()),
+        );
+      if (caseNo == 2)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => RedAlertSent()),
+        );
+    });
+  }
+
   @override
+  void dispose() {
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Container(
       child: AnimatedSwitcher(
@@ -59,7 +82,7 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                     Animatedbutton(
                         onLongPress: () => onLongPress(2),
                         text: "TAP AND HOLD FOR \n RED ALERT",
-                        buttonColor: Colors.red[200],
+                        buttonColor: Palette.lighter,
                         shadowColor: Colors.red[100],
                         secondaryshadowColor: Colors.red[50]),
                     Spacer(flex: 5),
@@ -70,6 +93,7 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                   duration: duration,
                   caseNo: caseNo,
                   callback: callback,
+                  afterAlertSent: afterAlertSent,
                 )),
     );
   }

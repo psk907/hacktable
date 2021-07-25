@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/app.dart';
 import 'package:hacktable/pages/profile/profile.dart';
+import 'package:hacktable/pages/sos/yellowAlertsent.dart';
 import 'package:hacktable/pages/splash_screen.dart';
 
 const PROFILE_PAGE = '/profile';
 const HOME_PAGE = '/home';
 const SPLASH_SCREEN = '/splash';
 const DUMMY_SCREEN = '/dummy';
+const YELLOW_SENT = '/yellowsent';
 
 class RouterThing {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -30,6 +32,10 @@ class RouterThing {
 
       case DUMMY_SCREEN:
         return CustomRoute(page: Placeholder());
+
+      case YELLOW_SENT:
+        return CustomRoute(page: YellowAlertSent());
+        break;
 
       default:
         print("Page doesn't exist");

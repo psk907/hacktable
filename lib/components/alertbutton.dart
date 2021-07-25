@@ -68,10 +68,13 @@ class _AnimatedbuttonState extends State<Animatedbutton>
         boxShadow: [
           BoxShadow(
             spreadRadius: 35,
+            blurRadius: 3,
             color: secshadowcolor,
           ),
           BoxShadow(
-            spreadRadius: 15,
+            spreadRadius: 20,
+            blurRadius: 1,
+
             color: shadowcolor,
             // color: Colors.amber[100].withOpacity(0.2),
           ),

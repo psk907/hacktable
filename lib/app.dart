@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/pages/map_feature/map_page.dart';
-import 'package:hacktable/pages/map_feature/map_page_web.dart';
+import 'package:hacktable/pages/send_text.dart';
 import 'package:hacktable/pages/sos/sos_landing.dart';
 import 'package:hacktable/pages/discussions/discussions_landing.dart';
 import 'package:hacktable/playground/playground.dart';
@@ -40,7 +40,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
         elevation: 5.0,
         actions: [
           IconButton(
-            icon: Icon(Icons.face_rounded),
+            icon: Icon(Icons.person_rounded),
             onPressed: () => Navigator.pushNamed(context, PROFILE_PAGE),
           ),
         ],
@@ -55,7 +55,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return TabBarView(
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
-      children: [MapPageWeb(), SOSLandingPage(), DiscussionsLanding()],
+      children: [MapPage(), SOSLandingPage(), DiscussionsLanding()],
     );
   }
 }
