@@ -35,9 +35,11 @@ dependencies:
   location: ^4.3.0
   permission_handler: ^8.1.4+1
   provider: ^5.0.0
-  shared_preferences: ^2.0.6
   url_launcher: ^6.0.9
   lottie: ^1.1.0
+  audioplayers: ^0.19.1
+  path_provider: ^2.0.2
+  record: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

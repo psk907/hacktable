@@ -12,7 +12,7 @@ class Api {
   String _authToken = 'Bearer $token';
 
   /// Add Authorization header
-  set authToken(String token) {
+  /*set authToken(String token) {
     _authToken = token;
     if (_authToken != null && token.isNotEmpty) {
       _dio.options.headers = <String, dynamic>{
@@ -20,10 +20,11 @@ class Api {
         "Authorization": _authToken,
       };
     }
-  }
+  }*/
 
   // Getters for API end-points
   static String get sendText => 'https://api.symbl.ai/v1/process/text';
+  static String get sendAudio => 'https://api.symbl.ai/v1/process/audio';
   Api() {
     options = BaseOptions(
       baseUrl: baseUrl,
@@ -58,10 +59,40 @@ class Api {
   // ignore: non_constant_identifier_names
   Future<Response<dynamic>> POST(String path, Map<String, dynamic> body) async {
     print(path);
-    print(_dio.options.headers);
+    _dio.options.headers = <String, dynamic>{
+      "Content-Type": 'application/json',
+      "Authorization": _authToken,
+    };
+
     Response<dynamic> response;
     try {
       response = await _dio.post(path, data: body);
+      // print(response);
+    } on SocketException catch (e) {
+      print(e);
+    } on DioError catch (e) {
+      print(e);
+      if (e != null && e.type == DioErrorType.response) {
+        return e.response;
+      } else
+        return null;
+    } on FormatException catch (e) {
+      print("Server returned an invalid response");
+      print(e.message);
+    }
+    return response;
+  }
+
+  Future<Response<dynamic>> POSTAudio(String filePath) async {
+    //print(path);
+
+    /*_dio.options.headers.addAll(<String, dynamic>{
+      Headers.contentLengthHeader: postData.length, // set content-length
+    });*/
+
+    Response<dynamic> response;
+    try {
+      //response = await _dio.post(sendAudio, data: body);
       // print(response);
     } on SocketException catch (e) {
       print(e);
