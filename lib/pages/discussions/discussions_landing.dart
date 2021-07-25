@@ -41,16 +41,19 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                       height: 1,
                       color: Colors.black)),
 
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () => {},
-                color: Palette.AppBarBackground,
-                padding: EdgeInsets.only(right: 10.0, bottom: 1.0, top: 1.0),
+                style: ElevatedButton.styleFrom(
+                    primary: Palette.AppBarBackground,
+                    padding: EdgeInsets.only(
+                        right: 10.0, bottom: 1.0, top: 1.0, left: 10.0)),
                 child: Text(
                   'Go Now',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Palette.brightyellow,
-                      fontSize: 15.0), //TextStyle
+                      color: Colors.white,
+                      fontSize: 18.0), //TextStyle
                 ), //Text
               ),
 
