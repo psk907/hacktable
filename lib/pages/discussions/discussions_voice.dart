@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacktable/components/voicerecorder.dart';
 import 'package:hacktable/pages/send_text.dart';
 import 'package:hacktable/utils/router.dart';
 
@@ -35,37 +36,7 @@ class _DiscussionsVoiceState extends State<DiscussionsVoice> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            GestureDetector(
-              onLongPress: () {},
-              child: Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: size.height * 0.28,
-                  width: size.height * 0.28,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(500),
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 45,
-                          blurRadius: 4,
-                          color: Colors.green[50],
-                        ),
-                        BoxShadow(
-                          spreadRadius: 25,
-                          blurRadius: 1,
-
-                          color: Colors.green[100],
-                          // color: Colors.amber[100].withOpacity(0.2),
-                        ),
-                      ],
-                      color: Color(0xff9ad29c)),
-                  child: Image(
-                    image: AssetImage('assets/microphone.png'),
-                    height: size.height * 0.16,
-                  ),
-                ),
-              ),
-            ),
+            VoiceRecorder(),
             Text(
               "Narrate your experience",
               style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w900),
