@@ -55,11 +55,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return TabBarView(
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
-      children: [
-        TextForm() /*MapPage()*/,
-        SOSLandingPage(),
-        DiscussionsLanding()
-      ],
+      children: [MapPage(), SOSLandingPage(), DiscussionsLanding()],
     );
   }
 }
