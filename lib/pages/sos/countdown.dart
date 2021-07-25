@@ -91,7 +91,6 @@ class _CountdownWidgetState extends State<CountdownWidget> {
                 print('Countdown Started');
               },
               onComplete: () {
-                //TODO :SEND RESPECTIVE ALERT
                 widget.callback();
                 widget.afterAlertSent();
                 print('Countdown Ended');
@@ -116,7 +115,6 @@ class _CountdownWidgetState extends State<CountdownWidget> {
               icon: Icon(Icons.next_plan),
               onPressed: () {
                 print('Pressed');
-                //TODO :SEND RESPECTIVE ALERT
                 widget.controller.pause();
                 widget.callback();
                 widget.afterAlertSent();

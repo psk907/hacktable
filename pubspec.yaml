@@ -37,7 +37,6 @@ dependencies:
   provider: ^5.0.0
   url_launcher: ^6.0.9
   lottie: ^1.1.0
-  audioplayers: ^0.19.1
   path_provider: ^2.0.2
   record: ^3.0.0
 

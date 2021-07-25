@@ -1,72 +1,62 @@
 List<Map<String, dynamic>> contactsModel = [
   {
-    "type": "Y",
+    "type": "R",
     "name": "Mom",
-    "contactNo": "+91-994173922726",
+    "contactNo": "+911234567890",
   },
   {
-    "type": "Y",
+    "type": "R",
     "name": "Dad",
-    "contactNo": "+91-994173922726",
+    "contactNo": "+911234567890",
   },
   {
     "type": "Y",
     "name": "My lil bro",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "R",
-    "name": "Reesha",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "R",
-    "name": "Sankalp S",
-    "contactNo": "+91-994173922726",
+    "contactNo": "+911234567890",
   },
   {
     "type": "Y",
-    "name": "Suraj",
-    "contactNo": "+91-994173922726",
+    "name": "Reesha",
+    "contactNo": "+918762540826",
+  },
+  {
+    "type": "Y",
+    "name": "Sankalp S",
+    "contactNo": "+918050004321",
   },
   {
     "type": "R",
+    "name": "Suraj",
+    "contactNo": "+917348991609",
+  },
+  {
+    "type": "Y",
     "name": "Soundarya",
-    "contactNo": "+91-994173922726",
+    "contactNo": "+919741402918",
   },
   {
     "type": "Y",
     "name": "Vaish",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "Y",
-    "name": "Joe",
-    "contactNo": "+91-994173922726",
+    "contactNo": "+919950054581",
   },
   {
     "type": "R",
-    "name": "Becca",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "Y",
-    "name": "Phil",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "Y",
-    "name": "Cho Lin",
-    "contactNo": "+91-994173922726",
-  },
-  {
-    "type": "Y",
-    "name": "Pete",
-    "contactNo": "+91-994173922726",
+    "name": "Aakash",
+    "contactNo": "+918309377485",
   },
   {
     "type": "R",
-    "name": "Yelena Gomez",
-    "contactNo": "+91-994173922726",
+    "name": "Vridhi",
+    "contactNo": "+919535423592",
+  },
+  {
+    "type": "Y",
+    "name": "Neha",
+    "contactNo": "+919148116316",
+  },
+  {
+    "type": "Y",
+    "name": "Sharath",
+    "contactNo": "+919606678602",
   }
 ];
