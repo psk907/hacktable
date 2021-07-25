@@ -30,7 +30,7 @@ class _VoiceRecorderState extends State<VoiceRecorder>
     _controller.dispose();
   }
 
-  void _onTapDown(LongPressStartDetails details) {
+  void _onTapDown(TapDownDetails details) {
     _controller.forward();
   }
 
@@ -42,7 +42,7 @@ class _VoiceRecorderState extends State<VoiceRecorder>
     _scale = 1 - _controller.value;
     var size = MediaQuery.of(context).size;
     return GestureDetector(
-      onLongPressStart: _onTapDown,
+      onTapDown: _onTapDown,
       onLongPressEnd: _onTapUp,
       onLongPress: () {},
       child: Transform.scale(
