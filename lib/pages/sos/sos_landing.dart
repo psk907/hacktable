@@ -82,9 +82,9 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                     Animatedbutton(
                         onLongPress: () => onLongPress(2),
                         text: "TAP AND HOLD FOR \n RED ALERT",
-                        buttonColor: Colors.red[300],
-                        shadowColor: Colors.red[200],
-                        secondaryshadowColor: Colors.red[100]),
+                        buttonColor: Palette.lighter,
+                        shadowColor: Colors.red[100],
+                        secondaryshadowColor: Colors.red[50]),
                     Spacer(flex: 5),
                   ],
                 )

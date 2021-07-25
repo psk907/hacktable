@@ -29,8 +29,6 @@ class _RedAlertSentState extends State<RedAlertSent> {
             height: size.height * 0.3,
             alignment: Alignment.center,
           ),
-
-          // Spacer(flex: 2),
           Container(
             alignment: Alignment.center,
             width: size.width * 0.75,
@@ -39,7 +37,6 @@ class _RedAlertSentState extends State<RedAlertSent> {
               style: TextStyle(fontSize: 24, color: Colors.grey[700]),
             ),
           ),
-
           Container(
             alignment: Alignment.center,
             width: size.width * 0.75,
