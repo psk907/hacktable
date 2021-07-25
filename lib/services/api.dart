@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 class Api {
-  static String baseUrl = 'put-base-url-here';
+  static String baseUrl = '';
   Dio _dio;
   var options;
 
@@ -14,13 +14,14 @@ class Api {
     _authToken = token;
     if (_authToken != null && token.isNotEmpty) {
       _dio.options.headers = <String, dynamic>{
+        "Content-Type": 'application/json',
         "Authorization": _authToken,
       };
     }
   }
 
   // Getters for API end-points
-  static String get endpoint1 => 'endpoint1';
+  static String get sendText => 'https://api.symbl.ai/v1/process/text';
   Api() {
     options = BaseOptions(
       baseUrl: baseUrl,
@@ -54,6 +55,8 @@ class Api {
 
   // ignore: non_constant_identifier_names
   Future<Response<dynamic>> POST(String path, Map<String, dynamic> body) async {
+    print(path);
+    print(_dio.options.headers);
     Response<dynamic> response;
     try {
       response = await _dio.post(path, data: body);
