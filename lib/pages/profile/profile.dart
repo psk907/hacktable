@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hacktable/models/contacts_model.dart';
 import 'package:hacktable/themeconfig.dart';
 
@@ -16,7 +17,12 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Palette.AppBarBackground,
-        title: Text("Profile"),
+        title: Text(
+          "Profile",
+          style: GoogleFonts.muktaTextTheme()
+              .headline1
+              .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+        ),
       ),
       body: Container(
         //color: Colors.grey[200],
@@ -30,23 +36,27 @@ class _ProfilePageState extends State<ProfilePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
+                SizedBox(
+                  height: 15,
+                ),
                 CircleAvatar(
                   radius: 45,
                   backgroundColor: Palette.themeblue,
                   backgroundImage: AssetImage('assets/dummy_profile_pic.jpg'),
                 ),
                 SizedBox(
-                  height: 6,
+                  height: 8,
                 ),
                 Text(
-                  'Priyanka',
-                  style: TextStyle(fontSize: 22),
+                  'Priyanka Sharma',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Container(
-                  padding: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(5.0),
+                  padding: EdgeInsets.all(10),
                   height: 100,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.0),
@@ -60,10 +70,16 @@ class _ProfilePageState extends State<ProfilePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Your safe words',
-                            style: TextStyle(fontSize: 20, color: Colors.white),
+                            'Safe words',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
                           ),
-                          Icon(Icons.edit),
+                          Icon(
+                            Icons.edit,
+                            color: Colors.grey[100],
+                          ),
                         ],
                       ),
                       Text(
@@ -80,8 +96,23 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(
                   height: 10,
                 ),
+                Row(
+                  children: [
+                    Text(
+                      '  SOS contacts:',
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.grey[700],
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                     child: Container(
+                  margin: const EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.0),
                       color: Colors.grey[200]),
@@ -93,7 +124,8 @@ class _ProfilePageState extends State<ProfilePage> {
                           itemCount: contactsModel.length,
                           itemBuilder: (context, index) {
                             return Container(
-                              margin: EdgeInsets.all(5),
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 8),
                               height: 55,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12.0),
@@ -101,7 +133,8 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: Row(
                                 children: [
                                   Padding(
-                                      padding: EdgeInsets.all(3),
+                                      padding: EdgeInsets.fromLTRB(
+                                          8.0, 2.0, 12.0, 2.0),
                                       child: CircleAvatar(
                                         backgroundColor:
                                             contactsModel[index]['type'] == 'Y'
@@ -128,8 +161,18 @@ class _ProfilePageState extends State<ProfilePage> {
                                           ),
                                         ]),
                                   ),
-                                  Icon(Icons.edit),
-                                  Icon(Icons.delete),
+                                  Icon(
+                                    Icons.edit_rounded,
+                                    color: Colors.grey,
+                                    size: 23,
+                                  ),
+                                  SizedBox(width: 5),
+                                  Icon(
+                                    Icons.delete,
+                                    color: Colors.grey,
+                                    size: 25,
+                                  ),
+                                  SizedBox(width: 5),
                                 ],
                               ),
                             );
