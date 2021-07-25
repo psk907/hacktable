@@ -17,27 +17,27 @@ List<Map<String, dynamic>> contactsModel = [
   {
     "type": "Y",
     "name": "Reesha",
-    "contactNo": "+911234567890",
+    "contactNo": "+918762540826",
   },
   {
     "type": "Y",
     "name": "Sankalp S",
-    "contactNo": "+911234567890",
+    "contactNo": "+918050004321",
   },
   {
     "type": "R",
     "name": "Suraj",
-    "contactNo": "+911234567890",
+    "contactNo": "+917348991609",
   },
   {
     "type": "Y",
     "name": "Soundarya",
-    "contactNo": "+911234567890",
+    "contactNo": "+919741402918",
   },
   {
     "type": "Y",
     "name": "Vaish",
-    "contactNo": "+911234567890",
+    "contactNo": "+919950054581",
   },
   {
     "type": "R",
@@ -56,17 +56,17 @@ List<Map<String, dynamic>> contactsModel = [
   },
   {
     "type": "Y",
-    "name": "Cho Lin",
-    "contactNo": "+911234567890",
+    "name": "Sharath",
+    "contactNo": "+919606678602",
   },
   {
     "type": "Y",
-    "name": "Pete",
-    "contactNo": "+911234567890",
+    "name": "Trishi",
+    "contactNo": "+917259812460",
   },
   {
     "type": "R",
-    "name": "Yelena Gomez",
-    "contactNo": "+911234567890",
+    "name": "Utkarsh",
+    "contactNo": "+918303357744",
   }
 ];
