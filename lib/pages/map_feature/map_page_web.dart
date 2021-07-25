@@ -17,15 +17,15 @@ class MapPageWeb extends StatefulWidget {
   _MapPageWebState createState() => _MapPageWebState();
 }
 
-Widget getMap(List<LatLng> coordinates) {
+Widget getMap(List<LatLng> coordinates, LatLng currentLocation) {
   String htmlId = "7";
 
   // ignore: undefined_prefixed_name
   ui.platformViewRegistry.registerViewFactory(htmlId, (int viewId) {
-    final myLatlng = LatLng(12.97209179633721, 77.594);
+    final myLatlng = currentLocation;
 
     final mapOptions = MapOptions()
-      ..zoom = 10
+      ..zoom = 11
       ..center = myLatlng;
 
     final elem = DivElement()
@@ -37,11 +37,9 @@ Widget getMap(List<LatLng> coordinates) {
     final map = GMap(elem, mapOptions);
 
     coordinates.forEach((e) {
-      Circle(CircleOptions()
-        ..center = e
-        ..radius = 750.0
-        ..strokeWeight = 0
-        ..fillColor = "#000000"
+      Marker(MarkerOptions()
+        ..position = e
+        ..visible = true
         ..map = map);
     });
 
@@ -56,7 +54,7 @@ class _MapPageWebState extends State<MapPageWeb> {
   bool showLoading = true;
   LocationService locationService = LocationService();
   // CameraPosition _myLocation;
-  Set<Circle> circles = <Circle>{};
+  LatLng currentLocation;
 
   List<LatLng> coordinates = List.generate(
     10,
@@ -74,10 +72,10 @@ class _MapPageWebState extends State<MapPageWeb> {
 
   _init() async {
     await Future.wait([_getMyLocation(), _getMarkers()]);
+    // _generateCircles();
     setState(() {
       showLoading = false;
     });
-    _generateCircles();
   }
 
   Future<void> _getMyLocation() async {
@@ -85,8 +83,7 @@ class _MapPageWebState extends State<MapPageWeb> {
     // print(location);
     if (this.mounted)
       setState(() {
-        // _myLocation =
-        // CameraPosition(target: LatLng(location[0], location[1]), zoom: 13);
+        currentLocation = LatLng(location[0], location[1]);
       });
   }
 
@@ -107,21 +104,6 @@ class _MapPageWebState extends State<MapPageWeb> {
     //   ));
     // });
   }
-  _generateCircles() {
-    circles = coordinates
-        .map(
-          (e) => Circle(
-            CircleOptions()
-              ..center = e
-              ..radius = 750.0
-              ..strokeWeight = 0
-              ..fillColor = "#000000",
-          ),
-        )
-        .toSet();
-
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +111,6 @@ class _MapPageWebState extends State<MapPageWeb> {
         ? Center(child: CircularProgressIndicator())
         : Scaffold(
             // 1
-            body: getMap(coordinates));
+            body: getMap(coordinates, currentLocation));
   }
 }

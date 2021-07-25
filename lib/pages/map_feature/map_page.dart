@@ -27,9 +27,10 @@ class _MapPageState extends State<MapPage> {
 
   _init() async {
     await Future.wait([_getMyLocation(), _getMarkers()]);
-    setState(() {
-      showLoading = false;
-    });
+    if (this.mounted)
+      setState(() {
+        showLoading = false;
+      });
     _generateCircles();
   }
 

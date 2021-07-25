@@ -3,7 +3,9 @@ import 'package:hacktable/pages/intro_screen.dart';
 import 'package:hacktable/pages/splash_screen.dart';
 import 'package:hacktable/services/permission_service.dart';
 import 'package:hacktable/utils/enums.dart';
+import 'package:hacktable/web_app.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/foundation.dart' show TargetPlatform;
 
 import 'app.dart';
 
@@ -12,13 +14,22 @@ import 'app.dart';
 ///
 /// Requires the PermissionsService Provider to be initialized
 class Root {
-  getHome() {
+  bool _isMobile(TargetPlatform platform) {
+    return platform == TargetPlatform.android || platform == TargetPlatform.iOS;
+  }
+
+  getHome(TargetPlatform platform) {
     return Builder(
       builder: (context) {
+        print(_isMobile(platform));
+
         /// Watch for changes to [permissionState] from the respective ChangeNotifier
         switch (context.watch<PermissionService>().permissionState) {
           case PermissionState.granted:
-            return App();
+            if (_isMobile(platform))
+              return App();
+            else
+              return WebApp();
             break;
           case PermissionState.notGranted:
             return IntroScreen();

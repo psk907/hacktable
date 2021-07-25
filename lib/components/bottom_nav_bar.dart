@@ -5,12 +5,13 @@ class NavigationBar extends StatelessWidget {
   final Function(int) onTap;
 
   final int currentIndex;
-
-  const NavigationBar({
-    Key key,
-    @required this.onTap,
-    @required this.currentIndex,
-  }) : super(key: key);
+  final isWeb;
+  const NavigationBar(
+      {Key key,
+      @required this.onTap,
+      @required this.currentIndex,
+      this.isWeb = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,12 @@ class NavigationBar extends StatelessWidget {
           icon: const Icon(Icons.map_rounded),
           label: "Map",
         ),
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.home_rounded),
-          label: "Home",
-        ),
+        if (!isWeb) ...[
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.home_rounded),
+            label: "Home",
+          ),
+        ],
         BottomNavigationBarItem(
           icon: const Icon(Icons.mic_rounded),
           label: "Discuss",

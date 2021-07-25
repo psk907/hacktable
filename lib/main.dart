@@ -26,11 +26,13 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var platform = Theme.of(context).platform;
+    print(platform.toString());
     return MaterialApp(
       title: 'HackTable',
       debugShowCheckedModeBanner: false,
       // initialRoute: '/',
-      home: Root().getHome(),
+      home: Root().getHome(platform),
       // home: Playground(),
       theme: ThemeData(
         textTheme: GoogleFonts.muktaTextTheme(), //TODO: CHOSE FONT
