@@ -28,36 +28,29 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
             // add Column
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Lottie.asset('assets/discussions.json',
-                      width: size.width * 0.2),
+              Lottie.asset('assets/discussions.json', width: size.width * 0.5),
 
-                  Text(
-                      'Let us know if something disturbing took place, we will use this information to make the place safer.',
-                      style: TextStyle(
-                          // your text
-                          fontSize: 20.0,
-                          color: Colors.black)),
+              Text(
+                  'Let us know if something disturbing took place, we will use this information to make the place safer.',
+                  style: TextStyle(
+                      // your text
+                      fontSize: 15.0,
+                      color: Colors.black)),
 
-                  RaisedButton(
-                    onPressed: () => {},
-                    color: Palette.AppBarBackground,
-                    padding:
-                        EdgeInsets.only(right: 10.0, bottom: 1.0, top: 1.0),
-                    child: Text(
-                      'Go Now',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Palette.brightyellow,
-                          fontSize: 15.0), //TextStyle
-                    ), //Text
-                  ),
-
-                  //FlatButton
-                ],
+              RaisedButton(
+                onPressed: () => {},
+                color: Palette.AppBarBackground,
+                padding: EdgeInsets.only(right: 10.0, bottom: 1.0, top: 1.0),
+                child: Text(
+                  'Go Now',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Palette.brightyellow,
+                      fontSize: 15.0), //TextStyle
+                ), //Text
               ),
+
+              //FlatButton
             ],
           ),
         ),
