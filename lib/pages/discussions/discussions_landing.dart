@@ -28,6 +28,12 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
             // add Column
            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
+              Text(
+                  'Let us know if something disturbing took place, we will use this information to make the place safer.',
+                  style: TextStyle(
+                    // your text
+                      fontSize: 20.0,
+                      color: Colors.black)),
 
               RaisedButton(
                 onPressed: ()=> {},
@@ -42,12 +48,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                   ), //TextStyle
                 ), //Text
               ),
-              Text(
-                  'Let us know if something disturbing took place, we will use this information to make the place safer.',
-                  style: TextStyle(
-                      // your text
-                      fontSize: 20.0,
-                      color: Colors.black)),
+
  //FlatButton
             ],
           ),
