@@ -19,11 +19,11 @@ class NavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: const Icon(Icons.map_rounded),
+          icon: const Icon(Icons.location_on),
           label: "Map",
         ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.nearby_error_rounded),
+          icon: const Icon(Icons.warning_rounded),
           label: "SOS",
         ),
         BottomNavigationBarItem(
