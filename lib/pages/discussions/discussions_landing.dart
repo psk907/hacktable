@@ -29,7 +29,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.asset('assets/discussions.json',
-                  width: size.width * 0.35, height: size.height * 0.4),
+                  width: size.width * 0.35, height: size.height * 0.25),
 
               Text(
                   'Let us know if something disturbing took place, we will use this information to make the place safer.',
