@@ -56,9 +56,10 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        Confirmation(
-            topics: ["stalker", "dark street", "emergency call"],
-            sentimentIntensity: -0.7),
+        // Confirmation(
+        //     topics: ["stalker", "dark street", "emergency call"],
+        //     sentimentIntensity: -0.7),
+        MapPage(),
         SOSLandingPage(),
         DiscussionsLanding()
       ],
