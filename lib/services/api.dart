@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 
@@ -83,16 +84,35 @@ class Api {
     return response;
   }
 
-  Future<Response<dynamic>> POSTAudio(String filePath) async {
-    //print(path);
+  Future<Uint8List> _readFileByte(String filePath) async {
+    Uri myUri = Uri.parse(filePath);
+    File audioFile = new File.fromUri(myUri);
+    Uint8List bytes;
+    await audioFile.readAsBytes().then((value) {
+      bytes = Uint8List.fromList(value);
+      print('reading of bytes is completed');
+    }).catchError((onError) {
+      print('Exception Error while reading audio from path:' +
+          onError.toString());
+    });
+    return bytes;
+  }
 
-    /*_dio.options.headers.addAll(<String, dynamic>{
-      Headers.contentLengthHeader: postData.length, // set content-length
-    });*/
+  Future<Response<dynamic>> POSTAudio(String filePath) async {
+    print(filePath);
 
     Response<dynamic> response;
     try {
-      //response = await _dio.post(sendAudio, data: body);
+      Uint8List audioByte = await _readFileByte(filePath);
+      _dio.options.headers.addAll(<String, dynamic>{
+        Headers.contentLengthHeader: audioByte.length, // set content-length
+      });
+      print(audioByte.length);
+      // response = await _dio.post(sendAudio, data: audioByte); //TRY this if below one doesnt work
+      response = await _dio.post(
+        sendAudio,
+        data: Stream.fromIterable(audioByte.map((e) => [e])),
+      );
       // print(response);
     } on SocketException catch (e) {
       print(e);
