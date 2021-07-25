@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/pages/map_feature/map_page.dart';
+import 'package:hacktable/pages/send_text.dart';
 import 'package:hacktable/pages/sos/sos_landing.dart';
 import 'package:hacktable/pages/discussions/discussions_landing.dart';
 import 'package:hacktable/playground/playground.dart';
@@ -54,7 +55,11 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return TabBarView(
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
-      children: [MapPage(), SOSLandingPage(), DiscussionsLanding()],
+      children: [
+        TextForm() /*MapPage()*/,
+        SOSLandingPage(),
+        DiscussionsLanding()
+      ],
     );
   }
 }

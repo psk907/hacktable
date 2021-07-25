@@ -7,5 +7,9 @@ final ServiceLocator = GetIt.instance;
 /// Register various services used within the app to ensure neat transactions
 ///  between UI and API layers
 void createLocator() {
-  ServiceLocator.registerSingleton<Api>(Api());
+  const authToken =
+      'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJodHRwczovL3BsYXRmb3JtLnN5bWJsLmFpL3VzZXJJZCI6IjUwODUyMTQxMTcxOTk4NzIiLCJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoiRnBhcW5zajJsekh6dFlZekZ1V21scnNQWjh3NHo1bUtAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjI3MTA3MDE1LCJleHAiOjE2MjcxOTM0MTUsImF6cCI6IkZwYXFuc2oybHpIenRZWXpGdVdtbHJzUFo4dzR6NW1LIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.cBqJvipNMJDjWKLnnIrotK0cmKORjL39N-jnZaolvxwszWUSHqnX0d9j-komiLSSKBRB0QfWAKTf-zDiCKHHJvPItwOBb3Pejg0Z55ROONKBr9EUjNP_EJkBLy3BQhLk00hoL2tIz2b8zcTGH57z-vDKa2eIRbZKQYpmiPLkrTCZMWy8zVwdWJBMLjePOkhNGHSqxQ9i5YRKcQwHTNMreeunx4tP0RaJyXj_KOPI5wZjbMfisQpyph9PIOLl6jPnwSGbV4jz_pKz8eR6lWQ08PV6DWkQP4Q9z-rtJsii_vo0L-QbRkSHgnCbaGVC7vqQi98pWgt4O75xE8mYx3ZicA';
+  Api api = new Api();
+  api.authToken = 'Bearer ${authToken}';
+  ServiceLocator.registerSingleton<Api>(api);
 }
