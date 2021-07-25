@@ -58,15 +58,5 @@ List<Map<String, dynamic>> contactsModel = [
     "type": "Y",
     "name": "Sharath",
     "contactNo": "+919606678602",
-  },
-  {
-    "type": "Y",
-    "name": "Trishi",
-    "contactNo": "+917259812460",
-  },
-  {
-    "type": "R",
-    "name": "Utkarsh",
-    "contactNo": "+918303357744",
   }
 ];

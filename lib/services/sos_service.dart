@@ -11,18 +11,18 @@ String composeMessage(String type, String googleMapsUrl) {
       "They might be in trouble, please contact them or alert the authorities.";
 }
 
-var contactsModel = [
-  {
-    "type": "Y",
-    "name": "Reesha",
-    "contactNo": "+918762540826",
-  },
-  {
-    "type": "R",
-    "name": "Reesha",
-    "contactNo": "+918296322707",
-  },
-];
+// var contactsModel = [
+//   {
+//     "type": "Y",
+//     "name": "Reesha",
+//     "contactNo": "+918762540826",
+//   },
+//   {
+//     "type": "R",
+//     "name": "Reesha",
+//     "contactNo": "+918296322707",
+//   },
+// ];
 
 class SosService {
   static Future<bool> sendYellowAlert() async {
