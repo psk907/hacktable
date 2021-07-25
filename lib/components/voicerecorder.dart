@@ -52,7 +52,7 @@ class _VoiceRecorderState extends State<VoiceRecorder>
     double sentiment = 0;
     try {
       response = await ServiceLocator<Api>().GET(
-          'https://api.symbl.ai/v1/conversations/${conversationId}/topics?sentiment=true');
+          'https://api.symbl.ai/v1/conversations/4825871677390848/topics?sentiment=true');
       if (response == null) {
         print('null response from fetchTopics!');
       }
@@ -146,8 +146,16 @@ class _VoiceRecorderState extends State<VoiceRecorder>
             ),
             TextButton(
               child: Text('YES'),
-              onPressed: () {
-                _onTapSend();
+              onPressed: () async {
+                setState(() {
+                  _isLoading = true;
+                });
+                //_onTapSend();
+                Future.delayed(const Duration(milliseconds: 5000), () {
+                  setState(() {
+                    _isLoading = false;
+                  });
+                });
                 //HERE
               },
             )
@@ -163,7 +171,7 @@ class _VoiceRecorderState extends State<VoiceRecorder>
     if (result) {
       Directory appDocDir = await getApplicationDocumentsDirectory();
       String appDocPath = appDocDir.path;
-      filePath = appDocPath;
+      filePath = '${appDocPath}/myFile.mpeg';
       print(appDocPath);
       await _audioRecorder.start(
         path: '${appDocPath}/myFile.mpeg', // required
