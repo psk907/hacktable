@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,46 @@ class _TextFormState extends State<TextForm> {
   dynamic _result = '';
   TextEditingController textController = new TextEditingController();
 
+  Future<List<String>> _fetchTopics(String conversationId) async {
+    Response<dynamic> response;
+    List<String> topics = [];
+    List<double> sentimentValues = [];
+    double sentiment = 0;
+    try {
+      response = await ServiceLocator<Api>().GET(
+          'https://api.symbl.ai/v1/conversations/${conversationId}/topics?sentiment=true');
+      if (response == null) {
+        print('null response from fetchTopics!');
+      }
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        print(response);
+        var parsedJson = json.decode(response.toString());
+        for (var x in parsedJson['topics']) {
+          topics.add(x['text']);
+          if (x['sentiment']['suggested'] == 'negative') {
+            sentimentValues.add(x['sentiment']['polarity']['score']);
+          }
+        }
+        if (sentimentValues.isNotEmpty) {
+          for (var x in sentimentValues) {
+            sentiment += x;
+          }
+          sentiment /= sentimentValues.length;
+          topics.add(sentiment.toString());
+        }
+      } else {
+        print("fetchTopics() returned: " + response.statusCode.toString());
+      }
+    } catch (e) {
+      print("fetchTopics() returned: " + e.toString());
+    }
+
+    return topics;
+  }
+
   void _onTapSend() async {
+    ///Fetches conversation ID
+
     print('here!');
 
     setState(() {
@@ -31,6 +72,7 @@ class _TextFormState extends State<TextForm> {
     }
 
     Response<dynamic> response;
+    List<String> topics = [];
     try {
       response = await ServiceLocator<Api>().POST(Api.sendText, {
         "messages": [
@@ -47,8 +89,10 @@ class _TextFormState extends State<TextForm> {
       }
       if (response.statusCode == 200 || response.statusCode == 201) {
         print(response);
+        var parsedJson = json.decode(response.toString());
+        topics = await _fetchTopics(parsedJson['conversationId']);
         setState(() {
-          _result = response.toString();
+          _result = topics.toString();
         });
       } else {
         print(response.statusCode);
