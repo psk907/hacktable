@@ -1,8 +1,8 @@
 import 'package:sms_maintained/sms.dart';
 
+SmsSender sender = new SmsSender();
+
 /// this implementation is just to test it
-void sendSms() {
-  SmsSender sender = new SmsSender();
-  String address = '+918762540826';
-  sender.sendSms(new SmsMessage(address, 'Hello flutter!'));
+Future<void> sendSms(String address, String message) async {
+  await sender.sendSms(new SmsMessage(address, message));
 }
