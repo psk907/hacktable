@@ -35,9 +35,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Palette.AppBarBackground,
-
-        title:Center( child: Text('Voice Up')),
-
+        title: Text('Voice Up'),
         elevation: 5.0,
         actions: [
           IconButton(
