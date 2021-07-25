@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hacktable/pages/discussions/discussions_voice.dart';
 import 'package:hacktable/themeconfig.dart';
 import 'package:lottie/lottie.dart';
 
@@ -44,7 +45,13 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
                               height: 1,
                               color: Colors.black)))),
               ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DiscussionsVoice()),
+                  )
+                },
+
                 style: ElevatedButton.styleFrom(
                     primary: Palette.AppBarBackground,
                     padding: EdgeInsets.only(
