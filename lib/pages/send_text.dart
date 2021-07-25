@@ -7,14 +7,14 @@ import 'package:hacktable/services/api.dart';
 
 import '../servicelocator.dart';
 
-class TextForm extends StatefulWidget {
-  const TextForm({Key key}) : super(key: key);
+class SendText extends StatefulWidget {
+  const SendText({Key key}) : super(key: key);
 
   @override
-  _TextFormState createState() => _TextFormState();
+  _SendTextState createState() => _SendTextState();
 }
 
-class _TextFormState extends State<TextForm> {
+class _SendTextState extends State<SendText> {
   bool _isLoading = false;
   dynamic _result = '';
   TextEditingController textController = new TextEditingController();
@@ -108,26 +108,112 @@ class _TextFormState extends State<TextForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        TextFormField(
-          controller: textController,
-          keyboardType: TextInputType.multiline,
+    var size = MediaQuery.of(context).size;
+
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: size.height * 0.01),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: Text(
+                "Tell us what happened",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: size.height * 0.03),
+            Form(
+              child: TextField(
+                controller: textController,
+                autocorrect: true,
+                maxLines: 5,
+                style: TextStyle(fontSize: 22, color: Colors.black),
+                cursorHeight: 32,
+                decoration: InputDecoration(
+                  hintText: ' Start typing here ...',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.amber[100],
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: size.height * 0.018),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: size.width * 0.25,
+                  height: size.height * 0.05,
+                  child: TextButton(
+                    onPressed: () {
+                      textController.clear();
+                    },
+                    child: Text("Clear"),
+                  ),
+                ),
+                Container(
+                  width: size.width * 0.25,
+                  height: size.height * 0.05,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.teal[400],
+                      // padding:
+                      // EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8), // <-- Radius
+                      ),
+                      // textStyle: TextStyle(fontWeight: FontWeight.bold)
+                    ),
+                    onPressed: _onTapSend,
+                    child: _isLoading
+                        ? CircularProgressIndicator()
+                        : Text("Sumbit"),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 60),
+            Padding(
+              padding: const EdgeInsets.only(left: 4.0),
+              child: Text(
+                "What happens with my data?",
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: size.height * 0.02),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "Your input is valuable to us\nThe data that you provide us with will be shared to the authorities. It will be an anonymous submission. We use Symbl.ai to gain more insights on the data provided.",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.grey[600]),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+
+            // TODO: IDK WHAT TO DO WITH THE LINE BELOW
+            Text(_result.toString()),
+          ],
         ),
-        SizedBox(
-          height: 30,
-        ),
-        TextButton(
-          onPressed: _onTapSend,
-          child: _isLoading ? CircularProgressIndicator() : Text("Let's go"),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Text(_result.toString()),
-      ],
+      ),
     );
   }
 }
