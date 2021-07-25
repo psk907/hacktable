@@ -14,6 +14,11 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Palette.AppBarBackground,
+        title: Text('Voice Up'),
+        elevation: 5.0,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
           child: Column(
@@ -49,14 +54,14 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
           // Spacer(),
           Divider(
             thickness: 3,
-            endIndent: size.width * 0.15,
-            indent: size.width * 0.15,
+            endIndent: size.width * 0.18,
+            indent: size.width * 0.18,
           ),
           Container(
             width: size.width * 0.75,
             child: Text(
               "Do you want to send a red alert?",
-              style: TextStyle(fontSize: 32),
+              style: TextStyle(fontSize: 28),
             ),
           ),
           // Spacer(flex: 2),
@@ -79,7 +84,6 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
                 },
                 child: Text("RED ALERT")),
           ),
-          // Spacer(),
           Container(
             width: size.width * 0.8,
             child: Text(
@@ -87,7 +91,6 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
               style: TextStyle(fontStyle: FontStyle.italic),
             ),
           ),
-          // Spacer(flex: 1),
         ],
       )),
     );

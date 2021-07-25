@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/alertbutton.dart';
 import 'package:hacktable/pages/sos/countdown.dart';
+import 'package:hacktable/pages/sos/redAlertsent.dart';
 import 'package:hacktable/pages/sos/yellowAlertsent.dart';
 import 'package:hacktable/themeconfig.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
@@ -36,16 +37,25 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
   }
 
   afterAlertSent() {
-    // if (caseNo == 1)
     setState(() {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => YellowAlertSent()),
-      );
+      if (caseNo == 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => YellowAlertSent()),
+        );
+      if (caseNo == 2)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => RedAlertSent()),
+        );
     });
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Container(
       child: AnimatedSwitcher(
@@ -72,33 +82,10 @@ class _SOSLandingPageState extends State<SOSLandingPage> {
                     Animatedbutton(
                         onLongPress: () => onLongPress(2),
                         text: "TAP AND HOLD FOR \n RED ALERT",
-                        buttonColor: Colors.red[200],
-                        shadowColor: Colors.red[100],
-                        secondaryshadowColor: Colors.red[50]),
+                        buttonColor: Colors.red[300],
+                        shadowColor: Colors.red[200],
+                        secondaryshadowColor: Colors.red[100]),
                     Spacer(flex: 5),
-                    ElevatedButton.icon(
-                      label: Text(
-                        'Force send',
-                        style: TextStyle(fontSize: 22),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.teal[400],
-                        onPrimary: Colors.white,
-                        shape: const BeveledRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                      ),
-                      icon: Icon(Icons.next_plan),
-                      onPressed: () {
-                        print('Pressed');
-                        // CustomRoute(page: YellowAlertSent());
-
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => YellowAlertSent()),
-                        );
-                      },
-                    )
                   ],
                 )
               : CountdownWidget(
