@@ -39,24 +39,25 @@ class _YellowAlertSentState extends State<YellowAlertSent> {
             ],
           ),
           // Spacer(flex: 2),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                width: size.width * 0.75,
-                child: Text(
-                  "Hope everything is under control",
-                  style: TextStyle(fontSize: 24, color: Colors.grey[700]),
-                ),
-              ),
-              Container(
-                width: size.width * 0.75,
-                child: Text(
-                  "Do you want to send a red alert?",
-                  style: TextStyle(fontSize: 32),
-                ),
-              ),
-            ],
+          Container(
+            width: size.width * 0.75,
+            child: Text(
+              "Hope everything is under control",
+              style: TextStyle(fontSize: 24, color: Colors.grey[700]),
+            ),
+          ),
+          // Spacer(),
+          Divider(
+            thickness: 3,
+            endIndent: size.width * 0.15,
+            indent: size.width * 0.15,
+          ),
+          Container(
+            width: size.width * 0.75,
+            child: Text(
+              "Do you want to send a red alert?",
+              style: TextStyle(fontSize: 32),
+            ),
           ),
           // Spacer(flex: 2),
 
