@@ -31,7 +31,9 @@ dependencies:
   flutter_svg: ^0.22.0
   get_it: ^7.2.0
   google_fonts: ^2.1.0
+  google_maps: ^5.1.0
   google_maps_flutter: ^2.0.6
+  # google_maps_flutter_web: ^0.3.0+3
   location: ^4.3.0
   permission_handler: ^8.1.4+1
   provider: ^5.0.0
