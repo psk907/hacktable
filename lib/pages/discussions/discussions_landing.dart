@@ -17,7 +17,7 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
 
   @override
   Widget build(BuildContext context) {
-    var size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -28,10 +28,6 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
             // add Column
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image.asset(
-                "assets/alerted.jpg",
-                height: size.height * 0.3,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
