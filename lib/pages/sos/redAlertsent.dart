@@ -24,10 +24,14 @@ class _RedAlertSentState extends State<RedAlertSent> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            "assets/redalertsent.jpg",
-            height: size.height * 0.3,
-            alignment: Alignment.center,
+          Container(
+            child: Center(
+              child: Image.asset(
+                "assets/redalertsent.jpg",
+                height: size.height * 0.3,
+                alignment: Alignment.center,
+              ),
+            ),
           ),
           Container(
             alignment: Alignment.center,
@@ -35,6 +39,7 @@ class _RedAlertSentState extends State<RedAlertSent> {
             child: Text(
               "Help is on the way!",
               style: TextStyle(fontSize: 24, color: Colors.grey[700]),
+              textAlign: TextAlign.center,
             ),
           ),
           Container(
@@ -42,7 +47,9 @@ class _RedAlertSentState extends State<RedAlertSent> {
             width: size.width * 0.75,
             child: Text(
               "Police and the emergency contacts have been alerted.\nWe are with you !",
-              style: TextStyle(fontSize: 32),
+              style: TextStyle(
+                fontSize: 32,
+              ),
             ),
           ),
         ],
