@@ -1,4 +1,4 @@
-[
+const List incidentsExample = [
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -8,19 +8,18 @@
     "conversationId": "",
     "reportedOn": "2021-25-07 01:47:47"
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
     "userName": "Anonymous",
-    "location": [13.011053,  77.554939],
-    "incidentSummary": "posing as a tour guide and offering to show me the sights of the city",
+    "location": [13.011053, 77.554939],
+    "incidentSummary":
+        "posing as a tour guide and offering to show me the sights of the city",
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -30,9 +29,8 @@
     "conversationId": "",
     "reportedOn": "2021-25-07 01:30:04",
     "topics": ["life-threatening", "unsafe", "risky"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -42,21 +40,20 @@
     "conversationId": "",
     "reportedOn": "2021-25-07 06:22:50",
     "topics": ["stalker", "unsafe", "creepy"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
     "userName": "Nisha",
-    "location": [13.011050,  77.5549665],
-    "incidentSummary": "posing as a tour guide and offering to show me the sights of the city",
+    "location": [13.011050, 77.5549665],
+    "incidentSummary":
+        "posing as a tour guide and offering to show me the sights of the city",
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -66,9 +63,8 @@
     "conversationId": "",
     "reportedOn": "2021-25-07 01:30:04",
     "topics": ["life-threatening", "unsafe", "risky"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   },
-
   {
     "userUuid": "",
     "incidentUuid": "",
@@ -78,7 +74,6 @@
     "conversationId": "",
     "reportedOn": "2021-25-07 06:22:50",
     "topics": ["stalker", "unsafe", "creepy"],
-    "sentimentInensity": -0.8
+    "sentimentIntensity": -0.8
   }
-
-]
+];
