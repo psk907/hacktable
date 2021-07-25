@@ -32,6 +32,10 @@ class _HelpPageState extends State<HelpPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
+            Text(
+              "Which alert should I use?",
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+            ),
             helpcard(
                 height,
                 Colors.amber[100],
