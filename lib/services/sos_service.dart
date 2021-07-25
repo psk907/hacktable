@@ -5,6 +5,21 @@ import 'package:hacktable/services/location_service.dart';
 
 class SosService {
   static Future<bool> sendYellowAlert() async {
+    List<Contact> contacts = contactsModel
+        .map((e) => Contact.fromMap(e))
+        .where((element) => element.type == ContactType.yellow)
+        .toList();
+    print(contacts);
+
+    var coordinates = await LocationService.getLocation();
+    LatLng latLng = LatLng(coordinates[0], coordinates[1]);
+    String googleMapsUrl =
+        "https://www.google.com/maps/search/?api=1&query=${latLng.latitude}%2C${latLng.longitude}";
+    print(googleMapsUrl);
+    return true;
+  }
+
+  static Future<bool> sendRedAlert() async {
     var coordinates = await LocationService.getLocation();
     LatLng latLng = LatLng(coordinates[0], coordinates[1]);
     String googleMapsUrl =
@@ -12,7 +27,7 @@ class SosService {
     print(googleMapsUrl);
     List<Contact> contacts = contactsModel
         .map((e) => Contact.fromMap(e))
-        .where((element) => element.type == ContactType.yellow)
+        .where((element) => element.type == ContactType.red)
         .toList();
     print(contacts);
     return true;
