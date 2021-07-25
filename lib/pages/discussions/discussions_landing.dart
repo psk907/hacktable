@@ -26,15 +26,19 @@ class _DiscussionsLandingState extends State<DiscussionsLanding> {
         child: Center(
           child: Column(
             // add Column
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Lottie.asset('assets/discussions.json', width: size.width * 0.5),
+              Lottie.asset('assets/discussions.json',
+                  width: size.width * 0.35, height: size.height * 0.4),
 
               Text(
                   'Let us know if something disturbing took place, we will use this information to make the place safer.',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       // your text
-                      fontSize: 15.0,
+
+                      fontSize: 23.0,
+                      height: 1,
                       color: Colors.black)),
 
               RaisedButton(
