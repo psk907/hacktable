@@ -55,7 +55,7 @@ class _AnimatedbuttonState extends State<Animatedbutton>
     _controller.forward();
   }
 
-  void _onTapUp(TapUpDetails details) {
+  void _onTapUp(LongPressEndDetails details) {
     _controller.reverse();
   }
 
@@ -96,7 +96,7 @@ class _AnimatedbuttonState extends State<Animatedbutton>
     return GestureDetector(
       onLongPress: widget.onLongPress,
       onTapDown: _onTapDown,
-      onTapUp: _onTapUp,
+      onLongPressEnd: _onTapUp,
       child: Transform.scale(
         scale: _scale,
         child: _animatedButtonUI,

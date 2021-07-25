@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hacktable/configs/maps_format.dart';
+import 'package:hacktable/models/incident_analytics.dart';
+import 'package:hacktable/models/incidents_example.dart';
 import 'package:hacktable/services/location_service.dart';
 import 'package:hacktable/themeconfig.dart';
 
@@ -60,13 +62,14 @@ class _MapPageState extends State<MapPage> {
     // });
   }
   _generateCircles() {
-    List<LatLng> coordinates = List.generate(
-      10,
-      (index) => LatLng(
-        12.97209179633721 - (index * index * 0.01),
-        77.5932988675113 - (index * index * 0.0150),
-      ),
-    );
+    List<LatLng> coordinates = incidentsExample
+        .map(
+          (e) => IncidentAnalytics.fromMap(e),
+        )
+        .map(
+          (e) => LatLng(e.location.first, e.location[1]),
+        )
+        .toList();
     circles = coordinates
         .map(
           (e) => Circle(
