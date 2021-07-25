@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:hacktable/services/api.dart';
 import 'package:hacktable/utils/router.dart';
 
-import '../servicelocator.dart';
-import '../themeconfig.dart';
+import '../../servicelocator.dart';
+import '../../themeconfig.dart';
 
 class SendText extends StatefulWidget {
   const SendText({Key key}) : super(key: key);
