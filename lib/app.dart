@@ -41,7 +41,7 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
         elevation: 5.0,
         actions: [
           IconButton(
-            icon: Icon(Icons.face_rounded),
+            icon: Icon(Icons.person_rounded),
             onPressed: () => Navigator.pushNamed(context, PROFILE_PAGE),
           ),
         ],

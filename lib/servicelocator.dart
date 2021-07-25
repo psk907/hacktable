@@ -2,14 +2,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:hacktable/services/api.dart';
 
+// ignore:non_constant_identifier_names
 final ServiceLocator = GetIt.instance;
 
 /// Register various services used within the app to ensure neat transactions
 ///  between UI and API layers
 void createLocator() {
-  const authToken =
-      'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJodHRwczovL3BsYXRmb3JtLnN5bWJsLmFpL3VzZXJJZCI6IjUwODUyMTQxMTcxOTk4NzIiLCJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoiRnBhcW5zajJsekh6dFlZekZ1V21scnNQWjh3NHo1bUtAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjI3MTk2OTEzLCJleHAiOjE2MjcyODMzMTMsImF6cCI6IkZwYXFuc2oybHpIenRZWXpGdVdtbHJzUFo4dzR6NW1LIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.OAQDDhlfx3d0plBaaoph0RqVSIPdYC7ZgSywCxYb_MjYTbqilYauuEnZBB_TdBd4D0xLwnIx_zYhXViDcqsgESJrQGQXsEgwS5rgmjnwX7NxeV_LxjzkwRZF24WrzPj9qHjXGQ0Ec0GH8KNthxqxTjvhWQ8YG0qQrtOo8F9Xn7mhtk9bzGHxjCEP3mDAj2F9Srae483OqbYYht1f4oS1U0BavFXcyqcd3Xbp_GoQtw5NZKbYt_ZUWy7Xy8QDgqE8BQK8dhivC7HBvXkF39GLsCSU8KKqMGvL4xtUmJmdWzZmsXl_HEKUdssTBKp4kRr9eOcAIbkzivhtKbpYj_j1-g';
-  Api api = new Api();
-  api.authToken = 'Bearer ${authToken}';
-  ServiceLocator.registerSingleton<Api>(api);
+  ServiceLocator.registerSingleton<Api>(Api());
 }
