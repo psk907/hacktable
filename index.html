@@ -96,13 +96,79 @@
     <title>Voice Up | Dashboard</title>
     <link rel="manifest" href="manifest.json" />
   </head>
-  <body>
+ 
+  <style>
+    .loading {
+      /* display: ; */
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .text{
+      padding: 120;
+      -ms-transform: translate(10%, -50%);
+      transform: translate(10%, -50%);
+    }
+    
+    .loader {
+      border: 8px solid #FFFFFF;
+      border-radius: 50%;
+      /* border-top: 10px solid blue; */
+      border-right: 8px solid rgb(255, 100, 100);
+      /* border-bottom: 10px solid rgb(255, 100, 100); */
+      width: 80px;
+      height: 80px;
+      -webkit-animation: spin 1s linear infinite;
+      animation: spin 1s linear infinite;
+    }
+    
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <div class="loader">
+    </div>
+    <!-- <img src="icons/ms-icon-310x310.png" height="100"/> -->
+    <br />
+    <br />
+    <div class="text">
+      <b >
+        Loading..
+      </b>
+
+    </div>
+  </div>
+
     <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARDINwuwdaheZCY7jBXIX4gasRRDi4J48"></script>
     <script>
-      var serviceWorkerVersion = '1870605863';
+      var serviceWorkerVersion = '1278201997';
       var scriptLoaded = false;
       function loadMainDartJs() {
         if (scriptLoaded) {
