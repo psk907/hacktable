@@ -195,7 +195,7 @@ const List incidentsExample = [
     "incidentUuid": "",
     "userName": "Arjun",
     "location": [12.987895951508367, 77.42633020658542],
-    "incidentSummary": "Slipping sedative drugs into my food or drink.",
+    "incidentSummary": "Slipping a stash of sedative drugs into my food or drink.",
     "conversationId": "",
     "reportedOn": "2021-25-07 01:30:04",
     "topics": ["life-threatening", "unsafe", "risky"],
