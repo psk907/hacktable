@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/components/voicerecorder.dart';
-import 'package:hacktable/pages/send_text.dart';
+import 'package:hacktable/pages/discussions/discussions_text.dart';
+
 import 'package:hacktable/utils/router.dart';
 
 import '../../themeconfig.dart';

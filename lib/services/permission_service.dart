@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hacktable/utils/enums.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 class PermissionService extends ChangeNotifier {
   PermissionState _permissionState = PermissionState.none;
@@ -11,7 +11,7 @@ class PermissionService extends ChangeNotifier {
     Permission.locationWhenInUse,
   ];
 
-  SharedPreferences _prefs;
+  //SharedPreferences _prefs;
   PermissionState get permissionState => _permissionState;
 
   PermissionService.instance() {
@@ -55,7 +55,7 @@ class PermissionService extends ChangeNotifier {
     }
   }
 
-  _initPrefs() async {
+  /*_initPrefs() async {
     if (_prefs == null) _prefs = await SharedPreferences.getInstance();
-  }
+  }*/
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hacktable/components/bottom_nav_bar.dart';
 import 'package:hacktable/pages/discussions/confirmation.dart';
 import 'package:hacktable/pages/map_feature/map_page.dart';
-import 'package:hacktable/pages/send_text.dart';
+import 'package:hacktable/pages/profile/helppage.dart';
 import 'package:hacktable/pages/sos/sos_landing.dart';
 import 'package:hacktable/pages/discussions/discussions_landing.dart';
 import 'package:hacktable/playground/playground.dart';
@@ -41,6 +41,9 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
         elevation: 5.0,
         actions: [
           IconButton(
+              onPressed: () => Navigator.pushNamed(context, HELPPAGE),
+              icon: Icon(Icons.info)),
+          IconButton(
             icon: Icon(Icons.person_rounded),
             onPressed: () => Navigator.pushNamed(context, PROFILE_PAGE),
           ),
@@ -57,9 +60,10 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
       controller: _tabController,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        Confirmation(
-            topics: ["stalker", "dark street", "emergency call"],
-            sentimentIntensity: -0.7),
+        // Confirmation(
+        //     topics: ["stalker", "dark street", "emergency call"],
+        //     sentimentIntensity: -0.7),
+        MapPage(),
         SOSLandingPage(),
         DiscussionsLanding()
       ],

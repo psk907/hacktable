@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktable/pages/discussions/confirmation.dart';
 import 'package:hacktable/services/api.dart';
 import 'package:hacktable/utils/router.dart';
 
-import '../servicelocator.dart';
-import '../themeconfig.dart';
+import '../../servicelocator.dart';
+import '../../themeconfig.dart';
 
 class SendText extends StatefulWidget {
   const SendText({Key key}) : super(key: key);
@@ -48,6 +49,12 @@ class _SendTextState extends State<SendText> {
           sentiment /= sentimentValues.length;
           topics.add(sentiment.toString());
         }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  Confirmation(topics: topics, sentimentIntensity: sentiment)),
+        );
       } else {
         print("fetchTopics() returned: " + response.statusCode.toString());
       }

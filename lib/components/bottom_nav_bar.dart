@@ -20,7 +20,7 @@ class NavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: const Icon(Icons.map_rounded),
+          icon: const Icon(Icons.location_on),
           label: "Map",
         ),
         if (!isWeb) ...[

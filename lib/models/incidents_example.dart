@@ -73,7 +73,11 @@ const List incidentsExample = [
     "userName": "Anonymous",
     "location": [13.01252691453853, 77.55383392724337],
     "incidentSummary":
+<<<<<<< HEAD
         "posing as a tour guide and offering to show me the sights of the city",
+=======
+    "posing as a tour guide and offering to show me the sights of the city",
+>>>>>>> 1c81eaa24817716972e552c37ad96b5ed63beefb
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
@@ -107,7 +111,11 @@ const List incidentsExample = [
     "userName": "Nisha",
     "location": [13.011050, 77.5549665],
     "incidentSummary":
+<<<<<<< HEAD
         "posing as a tour guide and offering to show me the sights of the city",
+=======
+    "posing as a tour guide and offering to show me the sights of the city",
+>>>>>>> 1c81eaa24817716972e552c37ad96b5ed63beefb
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
@@ -141,7 +149,11 @@ const List incidentsExample = [
     "userName": "Anonymous",
     "location": [12.969289926382652, 77.49182590008385],
     "incidentSummary":
+<<<<<<< HEAD
         "posing as a tour guide and offering to show me the sights of the city",
+=======
+    "posing as a tour guide and offering to show me the sights of the city",
+>>>>>>> 1c81eaa24817716972e552c37ad96b5ed63beefb
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
@@ -175,7 +187,11 @@ const List incidentsExample = [
     "userName": "Nisha",
     "location": [13.040564434263858, 77.54509046965484],
     "incidentSummary":
+<<<<<<< HEAD
         "posing as a tour guide and offering to show me the sights of the city",
+=======
+    "posing as a tour guide and offering to show me the sights of the city",
+>>>>>>> 1c81eaa24817716972e552c37ad96b5ed63beefb
     "conversationId": "",
     "reportedOn": "2021-25-07 11:32:00",
     "topics": ["doubtful", "unsafe", "scared"],
