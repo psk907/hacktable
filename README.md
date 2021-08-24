@@ -1,4 +1,4 @@
-# Voice Up | Hacktable 2021 <img src="https://user-images.githubusercontent.com/37346450/126910854-c1392f33-be05-464b-8d64-5afb3428c5cc.png" align="right" height="50" />
+# [Voice Up | Hacktable 2021](https://devpost.com/software/voice-up) <img src="https://user-images.githubusercontent.com/37346450/126910854-c1392f33-be05-464b-8d64-5afb3428c5cc.png" align="right" height="50" />
 
 
 ## Inspiration
